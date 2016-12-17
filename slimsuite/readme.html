@@ -1,0 +1,2086 @@
+<HTML>
+<HEAD>
+<TITLE>SLIMSUITE Release ReadMe</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://www.southampton.ac.uk/~re1u06/software/redwards.css"/>
+<META HTTP-EQUIV="Description" NAME="Description" CONTENT="ReadMe documentation for release of SLIMSUITE software.">
+<META HTTP-EQUIV="Keywords" NAME="Keywords" CONTENT="richard edwards,slimfinder,slimdisc,qslimfinder,slimsearch,slimsuite, slimfinder, slimsearch, qslimfinder, comparimotif_V3, unifake, rje, rje_blast, rje_seq, rje_sequence, rje_scoring, rje_xgmml, rje_slim, rje_slimcalc, rje_slimcore, rje_slimlist, rje_motif_V3, rje_dismatrix_V2, ned_rankbydistribution, rje_zen, rje_menu, rje_hmm, rje_tm, rje_uniprot, rje_disorder, rje_aaprop, gopher_V2, ned_eigenvalues, rje_motiflist, rje_tree, rje_motif_stats, rje_motifocc, rje_ancseq, rje_tree_group, rje_pam, Short Linear Motif Finder">
+</HEAD>
+
+<BODY>
+<A NAME="Top"><H2>ReadMe documentation for release of SLIMSUITE software</H2></A>
+<P><B>Distribution compiled:</B> Tue Nov 16 12:10:37 2010
+<P><B>Questions/Comments?:</B> please contact 
+<A HREF="mailto:software@cabbagesofdoom.co.uk">software@cabbagesofdoom.co.uk</A></P>
+<HR>
+<H2>Installation Instructions</H2>
+<OL>
+<LI>Place the slimsuite.zip file in chosen directory (e.g. c:\bioware\) and unzip.
+<LI>A subdirectory slimsuite will be created containing all the necessary files to run
+</OL>
+<P>The software should run on any system that has <A HREF="http://www.python.org">Python</A> installed.
+Additional software may be necessary for full functionality. Further details can be found in the manuals supplied.</P>
+<HR>
+<H2>GNU License</H2>
+<P>Copyright (C) 2009 Richard J. Edwards &lt;software@cabbagesofdoom.co.uk&gt;
+</P><P>
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+</P><P>
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+</P><P>
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</P><P>
+Author contact: &lt;software@cabbagesofdoom.co.uk&gt; / School of Biological Sciences, University of Southampton, UK.
+</P><P>
+To incorporate this module into your own programs, please see GNU Lesser General Public License disclaimer in rje.py
+</P><HR>
+<H2>Distributed Files</H2><H3>Python Modules</H3>
+<UL>
+<LI><B><A HREF="#slimfinder">slimfinder</A> [version 4.1]</B> (Short Linear Motif Finder)
+<LI><B><A HREF="#slimsearch">slimsearch</A> [version 1.5]</B> (Short Linear Motif Search tool)
+<LI><B><A HREF="#qslimfinder">qslimfinder</A> [version 1.2]</B> (Query Short Linear Motif Finder)
+<LI><B><A HREF="#comparimotif_V3">comparimotif_V3</A> [version 3.5]</B> (Motif vs Motif Comparison Software)
+<LI><B><A HREF="#unifake">unifake</A> [version 1.2]</B> (Fake UniProt DAT File Generator)
+<LI><B><A HREF="#gopher_V2">gopher_V2</A> [version 2.8]</B> (Generation of Orthologous Proteins from High-Throughput Estimation of Relationships)
+<LI><B><A HREF="#ned_eigenvalues">ned_eigenvalues</A> [version 1.0]</B> (Modified N. Davey Relative Local Conservation module)
+<LI><B><A HREF="#ned_rankbydistribution">ned_rankbydistribution</A> [version 1.0]</B> (Modified SLiMFinder stats module)
+<LI><B><A HREF="#rje">rje</A> [version 3.12]</B> (Contains General Objects for all my (Rich's) scripts)
+<LI><B><A HREF="#rje_aaprop">rje_aaprop</A> [version 0.1]</B> (AA Property Matrix Module)
+<LI><B><A HREF="#rje_ancseq">rje_ancseq</A> [version 1.2]</B> (Ancestral Sequence Prediction Module)
+<LI><B><A HREF="#rje_blast">rje_blast</A> [version 1.10]</B> (BLAST Control Module)
+<LI><B><A HREF="#rje_dismatrix_V2">rje_dismatrix_V2</A> [version 2.4]</B> (Distance Matrix Module )
+<LI><B><A HREF="#rje_disorder">rje_disorder</A> [version 0.7]</B> (Disorder Prediction Module)
+<LI><B><A HREF="#rje_hmm">rje_hmm</A> [version 1.3]</B> (HMMer Control Module)
+<LI><B><A HREF="#rje_menu">rje_menu</A> [version 0.2]</B> (Generic Menu Methods Module)
+<LI><B><A HREF="#rje_motif_V3">rje_motif_V3</A> [version 3.0]</B> (Motif Class and Methods Module)
+<LI><B><A HREF="#rje_motif_stats">rje_motif_stats</A> [version 1.0]</B> (Motif Statistics Methods Module)
+<LI><B><A HREF="#rje_motiflist">rje_motiflist</A> [version 1.0]</B> (RJE Motif List Module)
+<LI><B><A HREF="#rje_motifocc">rje_motifocc</A> [version 0.0]</B> (Motif Occurrence Module)
+<LI><B><A HREF="#rje_pam">rje_pam</A> [version 1.2]</B> (Contains Objects for PAM matrices)
+<LI><B><A HREF="#rje_scoring">rje_scoring</A> [version 0.0]</B> (Scoring and Ranking Methods for RJE Python Modules)
+<LI><B><A HREF="#rje_seq">rje_seq</A> [version 3.8]</B> (DNA/Protein sequence list module)
+<LI><B><A HREF="#rje_sequence">rje_sequence</A> [version 1.16]</B> (DNA/Protein sequence object)
+<LI><B><A HREF="#rje_slim">rje_slim</A> [version 1.3]</B> (Short Linear Motif class module)
+<LI><B><A HREF="#rje_slimcalc">rje_slimcalc</A> [version 0.4]</B> (SLiM Attribute Calculation Module)
+<LI><B><A HREF="#rje_slimcore">rje_slimcore</A> [version 1.7]</B> (Core module/object for SLiMFinder and SLiMSearch)
+<LI><B><A HREF="#rje_slimlist">rje_slimlist</A> [version 0.5]</B> (SLiM dataset manager)
+<LI><B><A HREF="#rje_tm">rje_tm</A> [version 1.2]</B> (Tranmembrane and Signal Peptide Prediction Module)
+<LI><B><A HREF="#rje_tree">rje_tree</A> [version 2.7]</B> (Phylogenetic Tree Module)
+<LI><B><A HREF="#rje_tree_group">rje_tree_group</A> [version 1.2]</B> (Contains all the Grouping Methods for rje_tree.py)
+<LI><B><A HREF="#rje_uniprot">rje_uniprot</A> [version 3.8]</B> (RJE Module to Handle Uniprot Files)
+<LI><B><A HREF="#rje_xgmml">rje_xgmml</A> [version 0.0]</B> (RJE XGMLL Module )
+<LI><B><A HREF="#rje_zen">rje_zen</A> [version 1.0]</B> (Random Zen Wisdom Generator)
+</UL>
+<H3>Other Files</H3>
+<UL>
+<LI>SLiMFinder Manual.pdf
+<LI>PEAT Appendices.pdf
+<LI>PRESTO Manual.pdf
+<LI>GOPHER Manual.pdf
+<LI>RJE_SEQ Manual.pdf
+<LI>gnu_general_public_license.txt
+<LI>gnu_lesser_general_public_license.txt
+<LI>aaprop.txt
+<LI>jones.pam
+<LI>blosum62.bla
+</UL>
+<HR><A NAME="slimfinder"><H2>*** Module slimfinder *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       slimfinder<BR>
+<B>Description:</B>  Short Linear Motif Finder<BR>
+<B>Version:</B>      4.1<BR>
+<B>Last Edit:</B>    15/09/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Short linear motifs (SLiMs) in proteins are functional microdomains of fundamental importance in many biological<BR>
+    systems. SLiMs typically consist of a 3 to 10 amino acid stretch of the primary protein sequence, of which as few<BR>
+    as two sites may be important for activity, making identification of novel SLiMs extremely difficult. In particular,<BR>
+    it can be very difficult to distinguish a randomly recurring "motif" from a truly over-represented one. Incorporating<BR>
+    ambiguous amino acid positions and/or variable-length wildcard spacers between defined residues further complicates<BR>
+    the matter.<BR>
+<BR>
+    SLiMFinder is an integrated SLiM discovery program building on the principles of the SLiMDisc software for accounting<BR>
+    for evolutionary relationships [Davey NE, Shields DC & Edwards RJ (2006): Nucleic Acids Res. 34(12):3546-54].<BR>
+    SLiMFinder is comprised of two algorithms:<BR>
+<BR>
+    SLiMBuild identifies convergently evolved, short motifs in a dataset. Motifs with fixed amino acid positions are<BR>
+    identified and then combined to incorporate amino acid ambiguity and variable-length wildcard spacers. Unlike<BR>
+    programs such as TEIRESIAS, which return all shared patterns, SLiMBuild accelerates the process and reduces returned<BR>
+    motifs by explicitly screening out motifs that do not occur in enough unrelated proteins. For this, SLiMBuild uses<BR>
+    the "Unrelated Proteins" (UP) algorithm of SLiMDisc in which BLAST is used to identify pairwise relationships.<BR>
+    Proteins are then clustered according to these relationships into "Unrelated Protein Clusters" (UPCs), which are<BR>
+    defined such that no protein in a UPC has a BLAST-detectable relationship with a protein in another UPC.  If desired,<BR>
+    SLiMBuild can be used as a replacement for TEIRESIAS in other software (teiresias=T slimchance=F).<BR>
+<BR>
+    SLiMChance estimates the probability of these motifs arising by chance, correcting for the size and composition of<BR>
+    the dataset, and assigns a significance value to each motif. Motif occurrence probabilites are calculated<BR>
+    independently for each UPC, adjusted the size of a UPC using the Minimum Spanning Tree algorithm from SLiMDisc. These<BR>
+    individual occurrence probabilities are then converted into the total probability of the seeing the observed motifs<BR>
+    the observed number of (unrelated) times. These probabilities assume that the motif is known before the search. In<BR>
+    reality, only over-represented motifs from the dataset are looked at, so these probabilities are adjusted for the<BR>
+    size of motif-space searched to give a significance value. This is an estimate of the probability of seeing that<BR>
+    motif, or another one like it. These values are calculated separately for each length of motif. Where pre-known<BR>
+    motifs are also of interest, these can be given with the slimcheck=MOTIFS option and will be added to the output.<BR>
+    SLiMFinder version 4.0 introduced a more precise (but more computationally intensive) statistical model, which can<BR>
+    be switched on using sigprime=T. Likewise, the more precise (but more computationally intensive) correction to the<BR>
+    mean UPC probability heuristic can be switched on using sigv=T. (Note that the other SLiMChance options may not<BR>
+    work with either of these options.) The allsig=T option will output all four scores. In this case, SigPrimeV will be<BR>
+    used for ranking etc. unless probscore=X is used.<BR>
+<BR>
+    Where significant motifs are returned, SLiMFinder will group them into Motif "Clouds", which consist of physically<BR>
+    overlapping motifs (2+ non-wildcard positions are the same in the same sequence). This provides an easy indication<BR>
+    of which motifs may actually be variants of a larger SLiM and should therefore be considered together.<BR>
+<BR>
+    Additional Motif Occurrence Statistics, such as motif conservation, are handled by the rje_slimlist module. Please<BR>
+    see the documentation for this module for a full list of commandline options. These options are currently under<BR>
+    development for SLiMFinder and are not fully supported. See the SLiMFinder Manual for further details. Note that the<BR>
+    OccFilter *does* affect the motifs returned by SLiMBuild and thus the TEIRESIAS output (as does min. IC and min.<BR>
+    Support) but the overall Motif StatFilter *only* affects SLiMFinder output following SLiMChance calculations.<BR>
+<BR>
+<B>Secondary Functions:</B><BR>
+    The "MotifSeq" option will output fasta files for a list of X:Y, where X is a motif pattern and Y is the output file.<BR>
+<BR>
+    The "Randomise" function will take a set of input datasets (as in Batch Mode) and regenerate a set of new datasets<BR>
+    by shuffling the UPC among datasets. Note that, at this stage, this is quite crude and may result in the final<BR>
+    datasets having fewer UPC due to common sequences and/or relationships between UPC clusters in different datasets.<BR>
+<BR>
+<B>Commandline:</B> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Basic Input/Output Options ### <BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Sequence file to search [None]<BR>
+    <LI><B><FONT COLOR=RED>batch=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List of files to search, wildcards allowed. (Over-ruled by seqin=FILE.) [*.dat,*.fas]<BR>
+    <LI><B><FONT COLOR=RED>maxseq=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum number of sequences to process [500]<BR>
+    <LI><B><FONT COLOR=RED>maxupc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum UPC size of dataset to process [0]<BR>
+    <LI><B><FONT COLOR=RED>sizesort=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Sorts batch files by size prior to running (+1 small->big; -1 big->small; 0 none) [0]<BR>
+    <LI><B><FONT COLOR=RED>walltime=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Time in hours before program will abort search and exit [1.0]<BR>
+    <LI><B><FONT COLOR=RED>resfile=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Main SLiMFinder results table [slimfinder.csv]<BR>
+    <LI><B><FONT COLOR=RED>resdir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Redirect individual output files to specified directory (and look for intermediates) [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>buildpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Alternative path to look for existing intermediate files [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Force re-running of BLAST, UPC generation and SLiMBuild [False]<BR>
+    <LI><B><FONT COLOR=RED>pickup=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Pick-up from aborted batch run by identifying datasets in resfile using RunID [False]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether the sequences files are DNA rather than protein [False]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiMBuild Options I: Evolutionary Filtering  ###<BR>
+    <LI><B><FONT COLOR=RED>efilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use evolutionary filter [True]<BR>
+    <LI><B><FONT COLOR=RED>blastf=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use BLAST Complexity filter when determining relationships [True]<BR>
+    <LI><B><FONT COLOR=RED>blaste=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>BLAST e-value threshold for determining relationships [1e=4]<BR>
+    <LI><B><FONT COLOR=RED>altdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Alternative all by all distance matrix for relationships [None]<BR>
+    <LI><B><FONT COLOR=RED>gablamdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Alternative GABLAM results file [None] (!!!Experimental feature!!!)<BR>
+    <LI><B><FONT COLOR=RED>homcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Max number of homologues to allow (to reduce large multi-domain families) [0]<BR>
+    <LI><B><FONT COLOR=RED>newupc=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Look for alternative UPC file and calculate Significance using new clusters [None]<BR>
+<BR>
+    ### SLiMBuild Options II: Input Masking ###<BR>
+    <LI><B><FONT COLOR=RED>masking=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Master control switch to turn off all masking if False [True]<BR>
+    <LI><B><FONT COLOR=RED>dismask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to mask ordered regions (see rje_disorder for options) [False]<BR>
+    <LI><B><FONT COLOR=RED>consmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use relative conservation masking [False]<BR>
+    <LI><B><FONT COLOR=RED>ftmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>UniProt features to mask out [EM]<BR>
+    <LI><B><FONT COLOR=RED>imask=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>UniProt features to inversely ("inclusively") mask. (Seqs MUST have 1+ features) []<BR>
+    <LI><B><FONT COLOR=RED>compmask=</FONT><FONT COLOR=DARKRED>X,Y</FONT>    : </B>Mask low complexity regions (same AA in X+ of Y consecutive aas) [5,8]<BR>
+    <LI><B><FONT COLOR=RED>casemask=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Mask Upper or Lower case [None]<BR>
+    <LI><B><FONT COLOR=RED>motifmask=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>List (or file) of motifs to mask from input sequences []<BR>
+    <LI><B><FONT COLOR=RED>metmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Masks the N-terminal M (can be useful if termini=T) [True]<BR>
+    <LI><B><FONT COLOR=RED>posmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Masks list of position-specific aas, where list = pos1:aas,pos2:aas  [2:A]<BR>
+    <LI><B><FONT COLOR=RED>aamask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>Masks list of AAs from all sequences (reduces alphabet) []<BR>
+    <LI><B><FONT COLOR=RED>qregion=</FONT><FONT COLOR=DARKRED>X,Y</FONT>     : </B>Mask all but the region of the query from (and including) residue X to residue Y [0,-1]<BR>
+<BR>
+    ### SLiMBuild Options III: Basic Motif Construction ###<BR>
+    <LI><B><FONT COLOR=RED>termini=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to add termini characters (^ & $) to search sequences [True]<BR>
+    <LI><B><FONT COLOR=RED>minwild=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Minimum number of consecutive wildcard positions to allow [0]<BR>
+    <LI><B><FONT COLOR=RED>maxwild=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum number of consecutive wildcard positions to allow [2]<BR>
+    <LI><B><FONT COLOR=RED>slimlen=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum length of SLiMs to return (no. non-wildcard positions) [5]<BR>
+    <LI><B><FONT COLOR=RED>minocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum number of unrelated occurrences for returned SLiMs. (Proportion of UP if < 1) [0.05]<BR>
+    <LI><B><FONT COLOR=RED>absmin=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Used if minocc<1 to define absolute min. UP occ [3]<BR>
+    <LI><B><FONT COLOR=RED>alphahelix=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Special i, i+3/4, i+7 motif discovery [False]<BR>
+<BR>
+    ### SLiMBuild Options IV: Ambiguity ###<BR>
+    <LI><B><FONT COLOR=RED>preamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to search for ambiguous motifs during motif discovery [True]<BR>
+    <LI><B><FONT COLOR=RED>ambocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min. UP occurrence for subvariants of ambiguous motifs (minocc if 0 or > minocc) [0.05]<BR>
+    <LI><B><FONT COLOR=RED>absminamb=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Used if ambocc<1 to define absolute min. UP occ [2]<BR>
+    <LI><B><FONT COLOR=RED>equiv=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List (or file) of TEIRESIAS-style ambiguities to use [AGS,ILMVF,FYW,FYH,KRH,DE,ST]<BR>
+    <LI><B><FONT COLOR=RED>wildvar=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to allow variable length wildcards [True]<BR>
+    <LI><B><FONT COLOR=RED>combamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to search for combined amino acid degeneracy and variable wildcards [False]<BR>
+<BR>
+    ### SLiMBuild Options V: Advanced Motif Filtering ###<BR>
+    <LI><B><FONT COLOR=RED>altupc=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Look for alternative UPC file and filter based on minocc [None]<BR>
+    <LI><B><FONT COLOR=RED>musthave=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>Returned motifs must contain one or more of the AAs in LIST (reduces search space) []<BR>
+    <LI><B><FONT COLOR=RED>query=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>Return only SLiMs that occur in 1+ Query sequences (Name/AccNum) []<BR>
+    <LI><B><FONT COLOR=RED>focus=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>FILE containing focal groups for SLiM return (see Manual for details) [None]<BR>
+    <LI><B><FONT COLOR=RED>focusocc=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Motif must appear in X+ focus groups (0 = all) [0]<BR>
+    * See also rje_slimcalc options for occurrence-based calculations and filtering *<BR>
+    <BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiMChance Options ###<BR>
+    <LI><B><FONT COLOR=RED>slimchance=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Execute main SLiMFinder probability method and outputs [True]<BR>
+    <LI><B><FONT COLOR=RED>sigprime=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Calculate more precise (but more computationally intensive) statistical model [False]<BR>
+    <LI><B><FONT COLOR=RED>sigv=</FONT><FONT COLOR=DARKRED>T/F</FONT>        : </B>Use the more precise (but more computationally intensive) fix to mean UPC probability [False]<BR>
+    <LI><B><FONT COLOR=RED>dimfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use dimer masking pattern to adjust number of possible sites for motif [True]<BR>
+    <LI><B><FONT COLOR=RED>probcut=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Probability cut-off for returned motifs [0.1]<BR>
+    <LI><B><FONT COLOR=RED>maskfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use masked AA Frequencies (True), or (False) mask after frequency calculations [True]<BR>
+    <LI><B><FONT COLOR=RED>aafreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Use FILE to replace individual sequence AAFreqs (FILE can be sequences or aafreq) [None]<BR>
+    <LI><B><FONT COLOR=RED>aadimerfreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>: </B>Use empirical dimer frequencies from FILE (fasta or *.aadimer.tdt) (!!!Experimental!!!) [None]<BR>
+    <LI><B><FONT COLOR=RED>negatives=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Multiply raw probabilities by under-representation in FILE (!!!Experimental!!!) [None]<BR>
+    <LI><B><FONT COLOR=RED>smearfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to "smear" AA frequencies across UPC rather than keep separate AAFreqs [False]<BR>
+    <LI><B><FONT COLOR=RED>seqocc=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to upweight for multiple occurrences in same sequence (heuristic) [False]<BR>
+    <LI><B><FONT COLOR=RED>probscore=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Score to be used for probability cut-off and ranking (Prob/Sig/S/R) [Sig]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Advanced Output Options I: Output data ###<BR>
+    <LI><B><FONT COLOR=RED>clouds=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Identifies motif "clouds" which overlap at 2+ positions in X+ sequences (0=minocc / -1=off) [2]<BR>
+    <LI><B><FONT COLOR=RED>runid=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Run ID for resfile (allows multiple runs on same data) [DATE:TIME]<BR>
+    <LI><B><FONT COLOR=RED>logmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to log the masking of individual sequences [True]<BR>
+    <LI><B><FONT COLOR=RED>slimcheck=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Motif file/list to add to resfile output [] <BR>
+<BR>
+    ### Advanced Output Options II: Output formats ###<BR>
+    <LI><B><FONT COLOR=RED>teiresias=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Replace TEIRESIAS, making *.out and *.mask.fasta files [False]<BR>
+    <LI><B><FONT COLOR=RED>slimdisc=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Emulate SLiMDisc output format (*.rank & *.dat.rank + TEIRESIAS *.out & *.fasta) [False]<BR>
+    <LI><B><FONT COLOR=RED>extras=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Whether to generate additional output files (alignments etc.) [1]<BR>
+                        - 0 = No output beyond main results file<BR>
+                        - 1 = Generate occurrence file, alignments and cloud file<BR>
+                        - 2 = Generate all additional SLiMFinder outputs<BR>
+                        - 3 = Generate SLiMDisc emulation too (equiv extras=2 slimdisc=T)<BR>
+    <LI><B><FONT COLOR=RED>targz=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to tar and zip dataset result files (UNIX only) [False]<BR>
+    <LI><B><FONT COLOR=RED>savespace=</FONT><FONT COLOR=DARKRED>0</FONT>     : </B>Delete "unneccessary" files following run (best used with targz): [0]<BR>
+                        - 0 = Delete no files<BR>
+                        - 1 = Delete all bar *.upc and *.pickle and *.occ.csv files<BR>
+                        - 2 = Delete all dataset-specific files including *.upc and *.pickle (not *.tar.gz)<BR>
+<BR>
+    ### Advanced Output Options III: Additional Motif Filtering ### <BR>
+    <LI><B><FONT COLOR=RED>topranks=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Will only output top X motifs meeting probcut [1000]<BR>
+    <LI><B><FONT COLOR=RED>oldscores=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to also output old SLiMDisc score (S) and SLiMPickings score (R) [False]<BR>
+    <LI><B><FONT COLOR=RED>allsig=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to also output all SLiMChance combinations (Sig/SigV/SigPrime/SigPrimeV) [False]<BR>
+    <LI><B><FONT COLOR=RED>minic=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Minimum information content for returned motifs [2.1]<BR>
+    * See also rje_slimcalc options for occurrence-based calculations and filtering *<BR>
+    <BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Additional Functions I: MotifSeq ###    <BR>
+    <LI><B><FONT COLOR=RED>motifseq=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>Outputs fasta files for a list of X:Y, where X is the pattern and Y is the output file []<BR>
+    <LI><B><FONT COLOR=RED>slimbuild=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to build motifs with SLiMBuild. (For combination with motifseq only.) [True]<BR>
+<BR>
+    ### Additional Functions II: Randomised datasets ###<BR>
+    <LI><B><FONT COLOR=RED>randomise=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Randomise UPC within batch files and output new datasets [False]<BR>
+    <LI><B><FONT COLOR=RED>randir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Output path for creation of randomised datasets [Random/]<BR>
+    <LI><B><FONT COLOR=RED>randbase=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Base for random dataset name [rand]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, math, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_blast, rje_slim, rje_slimlist, rje_slimcalc, rje_slimcore, rje_dismatrix_V2, rje_seq, rje_scoring<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="slimsearch"><H2>*** Module slimsearch *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       SLiMSearch<BR>
+<B>Description:</B>  Short Linear Motif Search tool<BR>
+<B>Version:</B>      1.5<BR>
+<B>Last Edit:</B>    03/06/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    SLiMSearch is a tool for finding pre-defined SLiMs (Short Linear Motifs) in a protein sequence database. SLiMSearch<BR>
+    can make use of corrections for evolutionary relationships and a variation of the SLiMChance alogrithm from<BR>
+    SLiMFinder to assess motifs for statistical over- and under-representation. SLiMSearch is a replacement for PRESTO<BR>
+    and uses many of the same underlying modules.<BR>
+<BR>
+    Benefits of SLiMSearch that make it more useful than a lot of existing tools include:<BR>
+    * searching with mismatches rather than restricting hits to perfect matches.<BR>
+    * optional equivalency files for searching with specific allowed mismatched (e.g. charge conservation)<BR>
+    * generation or reading of alignment files from which to calculate conservation statistics for motif occurrences.<BR>
+    * additional statistics, inlcuding protein disorder, surface accessibility and hydrophobicity predictions<BR>
+    * recognition of "n of m" motif elements in the form <X:n:m>, where X is one or more amino acids that must occur n+<BR>
+    times across which m positions. E.g. <IL:3:5> must have 3+ Is and/or Ls in a 5aa stretch.<BR>
+<BR>
+    Main output for SLiMSearch is a delimited file of motif/peptide occurrences but the motifaln=T and proteinaln=T also<BR>
+    allow output of alignments of motifs and their occurrences.<BR>
+<BR>
+<B>Commandline:</B> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Basic Input/Output Options ###<BR>
+    <LI><B><FONT COLOR=RED>motifs=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>File of input motifs/peptides [None]<BR>
+                      Single line per motif format = 'Name Sequence #Comments' (Comments are optional and ignored)<BR>
+                      Alternative formats include fasta, SLiMDisc output and raw motif lists.<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Sequence file to search [None]<BR>
+    <LI><B><FONT COLOR=RED>batch=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List of sequence files for batch input (wildcard * permitted) []<BR>
+    <LI><B><FONT COLOR=RED>maxseq=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum number of sequences to process [0]<BR>
+    <LI><B><FONT COLOR=RED>maxsize=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum dataset size to process in AA (or NT) [100,000]<BR>
+    <LI><B><FONT COLOR=RED>maxocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Filter out Motifs with more than maximum number of occurrences [0]<BR>
+    <LI><B><FONT COLOR=RED>walltime=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Time in hours before program will abort search and exit [1.0]<BR>
+    <LI><B><FONT COLOR=RED>resfile=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Main SLiMSearch results table [slimsearch.csv]<BR>
+    <LI><B><FONT COLOR=RED>resdir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Redirect individual output files to specified directory (and look for intermediates) [SLiMSearch/]<BR>
+    <LI><B><FONT COLOR=RED>buildpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Alternative path to look for existing intermediate files [SLiMSearch/]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Force re-running of BLAST, UPC generation and search [False]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SearchDB Options I: Input Protein Sequence Masking ###<BR>
+    <LI><B><FONT COLOR=RED>masking=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Master control switch to turn off all masking if False [False]<BR>
+    <LI><B><FONT COLOR=RED>dismask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to mask ordered regions (see rje_disorder for options) [False]<BR>
+    <LI><B><FONT COLOR=RED>consmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use relative conservation masking [False]<BR>
+    <LI><B><FONT COLOR=RED>ftmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>UniProt features to mask out [EM,DOMAIN,TRANSMEM]<BR>
+    <LI><B><FONT COLOR=RED>imask=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>UniProt features to inversely ("inclusively") mask. (Seqs MUST have 1+ features) []<BR>
+    <LI><B><FONT COLOR=RED>compmask=</FONT><FONT COLOR=DARKRED>X,Y</FONT>    : </B>Mask low complexity regions (same AA in X+ of Y consecutive aas) [5,8]<BR>
+    <LI><B><FONT COLOR=RED>casemask=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Mask Upper or Lower case [None]<BR>
+    <LI><B><FONT COLOR=RED>motifmask=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>List (or file) of motifs to mask from input sequences []<BR>
+    <LI><B><FONT COLOR=RED>metmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Masks the N-terminal M [False]<BR>
+    <LI><B><FONT COLOR=RED>posmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Masks list of position-specific aas, where list = pos1:aas,pos2:aas  [2:A]<BR>
+    <LI><B><FONT COLOR=RED>aamask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>Masks list of AAs from all sequences (reduces alphabet) []<BR>
+    <BR>
+    ### SearchDB Options II: Evolutionary Filtering  ###<BR>
+    <LI><B><FONT COLOR=RED>efilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use evolutionary filter [False]<BR>
+    <LI><B><FONT COLOR=RED>blastf=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use BLAST Complexity filter when determining relationships [True]<BR>
+    <LI><B><FONT COLOR=RED>blaste=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>BLAST e-value threshold for determining relationships [1e=4]<BR>
+    <LI><B><FONT COLOR=RED>altdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Alternative all by all distance matrix for relationships [None]<BR>
+    <LI><B><FONT COLOR=RED>gablamdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Alternative GABLAM results file [None] (!!!Experimental feature!!!)<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiMChance Options ###<BR>
+    <LI><B><FONT COLOR=RED>maskfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use masked AA Frequencies (True), or (False) mask after frequency calculations [True]<BR>
+    <LI><B><FONT COLOR=RED>aafreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Use FILE to replace individual sequence AAFreqs (FILE can be sequences or aafreq) [None]<BR>
+    <LI><B><FONT COLOR=RED>aadimerfreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>: </B>Use empirical dimer frequencies from FILE (fasta or *.aadimer.tdt) [None]<BR>
+    <LI><B><FONT COLOR=RED>negatives=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Multiply raw probabilities by under-representation in FILE [None]<BR>
+    <LI><B><FONT COLOR=RED>background=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Use observed support in background file for over-representation calculations [None]<BR>
+    <LI><B><FONT COLOR=RED>smearfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to "smear" AA frequencies across UPC rather than keep separate AAFreqs [False]<BR>
+    <LI><B><FONT COLOR=RED>seqocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Restrict to sequences with X+ occurrences (adjust for high frequency SLiMs) [1]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Output Options ###<BR>
+    <LI><B><FONT COLOR=RED>extras=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to generate additional output files (alignments etc.) [True]<BR>
+    <LI><B><FONT COLOR=RED>pickle=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to save/use pickles [True]<BR>
+    <LI><B><FONT COLOR=RED>targz=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to tar and zip dataset result files (UNIX only) [False]<BR>
+    <LI><B><FONT COLOR=RED>savespace=</FONT><FONT COLOR=DARKRED>0</FONT>     : </B>Delete "unneccessary" files following run (best used with targz): [0]<BR>
+                        - 0 = Delete no files<BR>
+                        - 1 = Delete all bar *.upc and *.pickle files<BR>
+                        - 2 = Delete all dataset-specific files including *.upc and *.pickle (not *.tar.gz)<BR>
+    * See also rje_slimcalc options for occurrence-based calculations and filtering *<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="qslimfinder"><H2>*** Module qslimfinder *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       qslimfinder<BR>
+<B>Description:</B>  Query Short Linear Motif Finder<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    15/09/10<BR>
+<B>Copyright (C) 2008  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    QSLiMFinder is a modification of the basic SLiMFinder tool to specifically look for SLiMs shared by a query sequence<BR>
+    and one or more additional sequences. To do this, SLiMBuild first identifies all motifs that are present in the query<BR>
+    sequences before removing it (and its UPC) from the dataset. The rest of the search and stats takes place using the<BR>
+    remainder of the dataset but only using motifs found in the query. The final correction for multiple testing is made<BR>
+    using a motif space defined by the original query sequence, rather than the full potential motif space used by the<BR>
+    original SLiMFinder. This is offset against the increased probability of the observed motif support values due to the<BR>
+    reduction of support that results from removing the query sequence but could potentially still identify SLiMs will<BR>
+    increased significance.<BR>
+<BR>
+    Note that minocc and ambocc values *include* the query sequence, e.g. minocc=2 specifies the query and ONE other UPC.    <BR>
+    <BR>
+<B>Commandline:</B> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Basic Input/Output Options ### <BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Sequence file to search [None]<BR>
+    <LI><B><FONT COLOR=RED>batch=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List of files to search, wildcards allowed. (Over-ruled by seqin=FILE.) [*.dat,*.fas]<BR>
+    <LI><B><FONT COLOR=RED>query=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>Return only SLiMs that occur in 1+ Query sequences (Name/AccNum/Seq Number) [1]<BR>
+    <LI><B><FONT COLOR=RED>addquery=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>Adds query sequence(s) to batch jobs from FILE [None]<BR>
+    <LI><B><FONT COLOR=RED>maxseq=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum number of sequences to process [500]<BR>
+    <LI><B><FONT COLOR=RED>maxupc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum UPC size of dataset to process [0]<BR>
+    <LI><B><FONT COLOR=RED>sizesort=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Sorts batch files by size prior to running (+1 small->big; -1 big->small; 0 none) [0]<BR>
+    <LI><B><FONT COLOR=RED>walltime=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Time in hours before program will abort search and exit [1.0]<BR>
+    <LI><B><FONT COLOR=RED>resfile=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Main SLiMFinder results table [slimfinder.csv]<BR>
+    <LI><B><FONT COLOR=RED>resdir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Redirect individual output files to specified directory (and look for intermediates) [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>buildpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Alternative path to look for existing intermediate files [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Force re-running of BLAST, UPC generation and SLiMBuild [False]<BR>
+    <LI><B><FONT COLOR=RED>pickup=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Pick-up from aborted batch run by identifying datasets in resfile using RunID [False]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether the sequences files are DNA rather than protein [False]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiMBuild Options I: Evolutionary Filtering  ###<BR>
+    <LI><B><FONT COLOR=RED>efilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use evolutionary filter [True]<BR>
+    <LI><B><FONT COLOR=RED>blastf=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use BLAST Complexity filter when determining relationships [True]<BR>
+    <LI><B><FONT COLOR=RED>blaste=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>BLAST e-value threshold for determining relationships [1e=4]<BR>
+    <LI><B><FONT COLOR=RED>altdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Alternative all by all distance matrix for relationships [None]<BR>
+    <LI><B><FONT COLOR=RED>gablamdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Alternative GABLAM results file [None] (!!!Experimental feature!!!)<BR>
+    <LI><B><FONT COLOR=RED>homcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Max number of homologues to allow (to reduce large multi-domain families) [0]<BR>
+<BR>
+    ### SLiMBuild Options II: Input Masking ###<BR>
+    <LI><B><FONT COLOR=RED>masking=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Master control switch to turn off all masking if False [True]<BR>
+    <LI><B><FONT COLOR=RED>dismask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to mask ordered regions (see rje_disorder for options) [False]<BR>
+    <LI><B><FONT COLOR=RED>consmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use relative conservation masking [False]<BR>
+    <LI><B><FONT COLOR=RED>ftmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>UniProt features to mask out [EM]<BR>
+    <LI><B><FONT COLOR=RED>imask=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>UniProt features to inversely ("inclusively") mask. (Seqs MUST have 1+ features) []<BR>
+    <LI><B><FONT COLOR=RED>compmask=</FONT><FONT COLOR=DARKRED>X,Y</FONT>    : </B>Mask low complexity regions (same AA in X+ of Y consecutive aas) [5,8]<BR>
+    <LI><B><FONT COLOR=RED>casemask=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Mask Upper or Lower case [None]<BR>
+    <LI><B><FONT COLOR=RED>motifmask=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>List (or file) of motifs to mask from input sequences []<BR>
+    <LI><B><FONT COLOR=RED>metmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Masks the N-terminal M (can be useful if termini=T) [True]<BR>
+    <LI><B><FONT COLOR=RED>posmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Masks list of position-specific aas, where list = pos1:aas,pos2:aas  [2:A]<BR>
+    <LI><B><FONT COLOR=RED>aamask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>Masks list of AAs from all sequences (reduces alphabet) []<BR>
+    <LI><B><FONT COLOR=RED>qregion=</FONT><FONT COLOR=DARKRED>X,Y</FONT>     : </B>Mask all but the region of the query from (and including) residue X to residue Y [0,-1]<BR>
+    <BR>
+    ### SLiMBuild Options III: Basic Motif Construction ###<BR>
+    <LI><B><FONT COLOR=RED>termini=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to add termini characters (^ & $) to search sequences [True]<BR>
+    <LI><B><FONT COLOR=RED>minwild=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Minimum number of consecutive wildcard positions to allow [0]<BR>
+    <LI><B><FONT COLOR=RED>maxwild=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum number of consecutive wildcard positions to allow [2]<BR>
+    <LI><B><FONT COLOR=RED>slimlen=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum length of SLiMs to return (no. non-wildcard positions) [5]<BR>
+    <LI><B><FONT COLOR=RED>minocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum number of unrelated occurrences for returned SLiMs. (Proportion of UP if < 1) [0.05]<BR>
+    <LI><B><FONT COLOR=RED>absmin=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Used if minocc<1 to define absolute min. UP occ [3]<BR>
+    <LI><B><FONT COLOR=RED>alphahelix=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Special i, i+3/4, i+7 motif discovery [False]<BR>
+<BR>
+    ### SLiMBuild Options IV: Ambiguity ###<BR>
+    <LI><B><FONT COLOR=RED>preamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to search for ambiguous motifs during motif discovery [True]<BR>
+    <LI><B><FONT COLOR=RED>ambocc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min. UP occurrence for subvariants of ambiguous motifs (minocc if 0 or > minocc) [0.05]<BR>
+    <LI><B><FONT COLOR=RED>absminamb=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Used if ambocc<1 to define absolute min. UP occ [2]<BR>
+    <LI><B><FONT COLOR=RED>equiv=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List (or file) of TEIRESIAS-style ambiguities to use [AGS,ILMVF,FYW,FYH,KRH,DE,ST]<BR>
+    <LI><B><FONT COLOR=RED>wildvar=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to allow variable length wildcards [True]<BR>
+    <LI><B><FONT COLOR=RED>combamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to search for combined amino acid degeneracy and variable wildcards [False]<BR>
+<BR>
+    ### SLiMBuild Options V: Advanced Motif Filtering ###<BR>
+    <LI><B><FONT COLOR=RED>musthave=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>Returned motifs must contain one or more of the AAs in LIST (reduces search space) []<BR>
+    <LI><B><FONT COLOR=RED>focus=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>FILE containing focal groups for SLiM return (see Manual for details) [None]<BR>
+    <LI><B><FONT COLOR=RED>focusocc=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Motif must appear in X+ focus groups (0 = all) [0]<BR>
+    * See also rje_slimcalc options for occurrence-based calculations and filtering *<BR>
+    <BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiMChance Options ###<BR>
+    <LI><B><FONT COLOR=RED>slimchance=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Execute main SLiMFinder probability method and outputs [True]<BR>
+    <LI><B><FONT COLOR=RED>probcut=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Probability cut-off for returned motifs [0.1]<BR>
+    <LI><B><FONT COLOR=RED>maskfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use masked AA Frequencies (True), or (False) mask after frequency calculations [False]<BR>
+    <LI><B><FONT COLOR=RED>aafreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Use FILE to replace individual sequence AAFreqs (FILE can be sequences or aafreq) [None]<BR>
+    <LI><B><FONT COLOR=RED>aadimerfreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>: </B>Use empirical dimer frequencies from FILE (fasta or *.aadimer.tdt) (!!!Experimental!!!) [None]<BR>
+    <LI><B><FONT COLOR=RED>negatives=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Multiply raw probabilities by under-representation in FILE (!!!Experimental!!!) [None]<BR>
+    <LI><B><FONT COLOR=RED>smearfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to "smear" AA frequencies across UPC rather than keep separate AAFreqs [False]<BR>
+    <LI><B><FONT COLOR=RED>seqocc=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to upweight for multiple occurrences in same sequence (heuristic) [False]<BR>
+    <LI><B><FONT COLOR=RED>probscore=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Score to be used for probability cut-off and ranking (Prob/Sig) [Sig]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Advanced Output Options I: Output data ###<BR>
+    <LI><B><FONT COLOR=RED>clouds=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Identifies motif "clouds" which overlap at 2+ positions in X+ sequences (0=minocc / -1=off) [2]<BR>
+    <LI><B><FONT COLOR=RED>runid=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Run ID for resfile (allows multiple runs on same data) [DATE:TIME]<BR>
+    <LI><B><FONT COLOR=RED>logmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to log the masking of individual sequences [True]<BR>
+    <LI><B><FONT COLOR=RED>slimcheck=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Motif file/list to add to resfile output [] <BR>
+<BR>
+    ### Advanced Output Options II: Output formats ###<BR>
+    <LI><B><FONT COLOR=RED>teiresias=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Replace TEIRESIAS, making *.out and *.mask.fasta files [False]<BR>
+    <LI><B><FONT COLOR=RED>slimdisc=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Emulate SLiMDisc output format (*.rank & *.dat.rank + TEIRESIAS *.out & *.fasta) [False]<BR>
+    <LI><B><FONT COLOR=RED>extras=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Whether to generate additional output files (alignments etc.) [1]<BR>
+                        - 0 = No output beyond main results file<BR>
+                        - 1 = Generate occurrence file, alignments and cloud file<BR>
+                        - 2 = Generate all additional SLiMFinder outputs<BR>
+                        - 3 = Generate SLiMDisc emulation too (equiv extras=2 slimdisc=T)<BR>
+    <LI><B><FONT COLOR=RED>targz=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to tar and zip dataset result files (UNIX only) [False]<BR>
+    <LI><B><FONT COLOR=RED>savespace=</FONT><FONT COLOR=DARKRED>0</FONT>     : </B>Delete "unneccessary" files following run (best used with targz): [0]<BR>
+                        - 0 = Delete no files<BR>
+                        - 1 = Delete all bar *.upc and *.pickle files<BR>
+                        - 2 = Delete all dataset-specific files including *.upc and *.pickle (not *.tar.gz)<BR>
+<BR>
+    ### Advanced Output Options III: Additional Motif Filtering ### <BR>
+    <LI><B><FONT COLOR=RED>topranks=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Will only output top X motifs meeting probcut [1000]<BR>
+    <LI><B><FONT COLOR=RED>minic=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Minimum information content for returned motifs [2.1]<BR>
+    * See also rje_slimcalc options for occurrence-based calculations and filtering *<BR>
+    <BR>
+<B>Uses general modules:</B> copy, glob, math, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> slimfinder, rje, rje_blast, rje_slim, rje_slimlist, rje_slimcalc, rje_slimcore, rje_dismatrix_V2,<BR>
+    rje_seq, rje_scoring<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="comparimotif_V3"><H2>*** Module comparimotif_V3 *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       comparimotif<BR>
+<B>Description:</B>  Motif vs Motif Comparison Software<BR>
+<B>Version:</B>      3.5<BR>
+<B>Last Edit:</B>    04/08/09<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    CompariMotif is a piece of software with a single objective: to take two lists of protein motifs and compare them to<BR>
+    each other, identifying which motifs have some degree of overlap, and identifying the relationships between those<BR>
+    motifs. It can be used to compare a list of motifs with themselves, their reversed selves, or a list of previously<BR>
+    published motifs, for example (e.g. ELM (http://elm.eu.org/)). CompariMotif outputs a table of all pairs of matching<BR>
+    motifs, along with their degree of similarity (information content) and their relationship to each other.<BR>
+<BR>
+    The best match is used to define the relationship between the two motifs. These relationships are comprised of the<BR>
+    following keywords:<BR>
+<BR>
+    Match type keywords identify the type of relationship seen:<BR>
+    * Exact = all the matches in the two motifs are precise<BR>
+    * Variant = focal motif contains only exact matches and subvariants of degenerate positions in the other motif<BR>
+    * Degenerate = the focal motif contains only exact matches and degenerate versions of positions in the other motif<BR>
+    * Complex = some positions in the focal motif are degenerate versions of positions in the compared motif, while <BR>
+    others are subvariants of degenerate positions.<BR>
+<BR>
+    Match length keywords identify the length relationships of the two motifs:<BR>
+    * Match = both motifs are the same length and match across their entire length<BR>
+    * Parent = the focal motif is longer and entirely contains the compared motif<BR>
+    * Subsequence = the focal motif is shorter and entirely contained within the compared motif<BR>
+    * Overlap = neither motif is entirely contained within the other<BR>
+<BR>
+    This gives sixteen possible classifications for each motif's relationship to the compared motif.<BR>
+<BR>
+<B>Input:</B><BR>
+    CompariMotif can take input in a number of formats. The preferred format is SLiMSearch format, while is a single line<BR>
+    motif format: 'Name Sequence #Comments' (Comments are optional and ignored). Alternative inputs include SLiMDisc and<BR>
+    Slim Pickings output, raw lists of motifs, and fasta format.<BR>
+<BR>
+<B>Output:</B><BR>
+    The main output for CompariMotif is delimited text file containing the following fields:<BR>
+    * File1     = Name of motifs file (if outstyle=multi)<BR>
+    * File2     = Name of searchdb file (if outstyle=multi)<BR>
+    * Name1     = Name of motif from motif file 1 <BR>
+    * Name2     = Name of motif from motif file 2 <BR>
+    * Motif1    = Motif (pattern) from motif file 1<BR>
+    * Motif2    = Motif (pattern) from motif file 2<BR>
+    * Sim1      = Description of motif1's relationship to motif2<BR>
+    * Sim2      = Description of motif2's relationship to motif1<BR>
+    * Match     = Text summary of matched region<BR>
+    * MatchPos  = Number of matched positions between motif1 and motif2 (>= mishare=X)<BR>
+    * MatchIC   = Information content of matched positions<BR>
+    * NormIC    = MatchA as a proportion of the maximum possible MatchA<BR>
+    * Score     = Heuristic score (MatchPos x NormIC) for ranking motif matches<BR>
+    * Info1     = Ambiguity score of motif1 <BR>
+    * Info2     = Ambiguity score of motif2 <BR>
+    * Desc1     = Description of motif1 (if motdesc = 1 or 3)<BR>
+    * Desc2     = Description of motif2 (if motdesc = 2 or 3)<BR>
+<BR>
+    With the exception of the file names, which are only output if outstyle=multi, the above is the output for the<BR>
+    default "normal" output style. If outstyle=single then only statistics for motif2 (the searchdb motif) are output<BR>
+    as this is designed for searches using a single motif against a motif database. If outstyle=normalsplit or<BR>
+    outstyle=multisplit then motif1 information is grouped together, followed by motif2 information, followed by the<BR>
+    match statistics. More information can be found in the CompariMotif manual.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    ## Basic Input Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>motifs=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>File of input motifs/peptides [None]<BR>
+    <LI><B><FONT COLOR=RED>searchdb=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>(Optional) second motif file to compare. Will compare to self if none given. [None]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether motifs should be considered as DNA motifs [False]<BR>
+<BR>
+    ## Basic Output Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>resfile=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Name of results file, FILE.compare.txt. [motifsFILE-searchdbFILE.compare.txt]<BR>
+    <LI><B><FONT COLOR=RED>motinfo=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Filename for output of motif summary table (if desired) [None]<BR>
+    <LI><B><FONT COLOR=RED>motific=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Output Information Content for motifs [False]<BR>
+<BR>
+    ## Motif Comparison Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>minshare=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Min. number of non-wildcard positions for motifs to share [2]<BR>
+    <LI><B><FONT COLOR=RED>normcut=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Min. normalised MatchIC for motif match [0.5]<BR>
+    <LI><B><FONT COLOR=RED>matchfix=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>If >0 must exactly match *all* fixed positions in the motifs from:  [0]<BR>
+                        - 1: input (motifs=FILE) motifs<BR>
+                        - 2: searchdb motifs<BR>
+                        - 3: *both* input and searchdb motifs<BR>
+    <LI><B><FONT COLOR=RED>ambcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Max number of choices in ambiguous position before replaced with wildcard (0=use all) [10]<BR>
+<BR>
+    ## Advanced Motif Input Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>minic=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Min information content for a motif (1 fixed position = 1.0) [2.0]<BR>
+    <LI><B><FONT COLOR=RED>minfix=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min number of fixed positions for a motif to contain [0]<BR>
+    <LI><B><FONT COLOR=RED>minpep=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min number of defined positions in a motif [2]<BR>
+    <LI><B><FONT COLOR=RED>trimx=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Trims Xs from the ends of a motif [False]<BR>
+    <LI><B><FONT COLOR=RED>nrmotif=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to remove redundancy in input motifs [False]<BR>
+    <LI><B><FONT COLOR=RED>reverse=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Reverse the input motifs. [False]<BR>
+                        - If no searchdb given, these will be searched against the "forward" motifs.<BR>
+    <LI><B><FONT COLOR=RED>mismatches=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B><= X mismatches of positions can be tolerated [0]<BR>
+    <LI><B><FONT COLOR=RED>aafreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Use FILE to replace uniform AAFreqs (FILE can be sequences or aafreq) [None]    <BR>
+<BR>
+    ## Advanced Motif Output Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>xgmml=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to output XGMML format results [True]<BR>
+    <LI><B><FONT COLOR=RED>pickle=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to load/save pickle following motif loading/filtering [False]<BR>
+    <LI><B><FONT COLOR=RED>motdesc=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Sets which motifs have description outputs (0-3 as matchfix option) [3]<BR>
+    <LI><B><FONT COLOR=RED>outstyle=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Sets the output style for the resfile [normal]<BR>
+                        - normal = all standard stats are output<BR>
+                        - multi = designed for multiple appended runs. File names are also output<BR>
+                        - single = designed for searches of a single motif vs a database. Only motif2 stats are output<BR>
+                        - reduced = motifs do not have names or descriptions<BR>
+                        - normalsplit/multisplit = as normal/multi but stats are grouped by motif rather than by type<BR>
+<BR>
+<B>Uses general modules:</B> os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_menu, rje_slim, rje_slimlist, rje_xgmml, rje_zen<BR>
+<B>Other modules needed:</B> rje_aaprop, rje_dismatrix, rje_seq, rje_blast, rje_pam, rje_sequence, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="unifake"><H2>*** Module unifake *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       unifake<BR>
+<B>Description:</B>  Fake UniProt DAT File Generator<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    10/10/08<BR>
+<B>Copyright (C) 2008  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This program runs a number of in silico predication programs and converts protein sequences into a fake UniProt DAT<BR>
+    flat file. Additional features may be given as one or more tables, using the features=LIST option. Please see the<BR>
+    UniFake Manual for more details. <BR>
+<BR>
+<B>Commandline:</B><BR>
+    ### ~ INPUT OPTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Input sequence file. See rje_seq documentation for filtering options. [None]<BR>
+    <LI><B><FONT COLOR=RED>spcode=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Species code to use if it cannot be established from sequence name [None]<BR>
+    <LI><B><FONT COLOR=RED>features=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>List of files of addtional features in delimited form []    <BR>
+    <LI><B><FONT COLOR=RED>aliases=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>File of aliases to be added to Accession number list (for indexing) [None]<BR>
+    <LI><B><FONT COLOR=RED>pfam=</FONT><FONT COLOR=DARKRED>FILE</FONT>       : </B>PFam HMM download [None]<BR>
+    <LI><B><FONT COLOR=RED>unipath=</FONT><FONT COLOR=DARKRED>PATH</FONT>    : </B>Path to real UniProt Datafile (will look here for DB Index file made with rje_dbase)<BR>
+    <LI><B><FONT COLOR=RED>unireal=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Real UniProt data to add to UniFake output ['AC','GN','RC','RX','CC','DR','PE','KW']<BR>
+    <LI><B><FONT COLOR=RED>fudgeft=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Fudge the real features left/right until a sequence match is found [True]<BR>
+<BR>
+    ### ~ PROCESSING/OUTPUT OPTIONS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ###<BR>
+    <LI><B><FONT COLOR=RED>unifake=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>List of predictions to add to entries [tmhmm,signalp,disorder,pfam,uniprot]<BR>
+    <LI><B><FONT COLOR=RED>datout=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Name of output DAT file [Default input FILE.dat]<BR>
+    <LI><B><FONT COLOR=RED>disdom=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Disorder threshold below which to annotate PFam domain as "DOMAIN" [0.0]<BR>
+    <LI><B><FONT COLOR=RED>makeindex=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to make a uniprot index file following run [False]<BR>
+    <LI><B><FONT COLOR=RED>ensdat=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Look for acc/pep/gene in sequence name [False]<BR>
+    <LI><B><FONT COLOR=RED>tmhmm=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Path to TMHMM program [None]<BR>
+    <LI><B><FONT COLOR=RED>cleanup=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Remove TMHMM files after run [True]<BR>
+    <LI><B><FONT COLOR=RED>signalp=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Path to SignalP program [None]<BR>
+    <BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="gopher_V2"><H2>*** Module gopher_V2 *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       gopher<BR>
+<B>Description:</B>  Generation of Orthologous Proteins from High-Throughput Estimation of Relationships<BR>
+<B>Version:</B>      2.8<BR>
+<B>Last Edit:</B>    12/02/10<BR>
+<B>Copyright (C) 2005 Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This script is designed to take in two sequences files and generate datasets of orthologous sequence alignments.<BR>
+    The first [seqin] sequence set is the 'queries' around which orthologous datasets are to be assembled. This is now<BR>
+    optimised for a dataset consisting of one protein per protein-coding gene, although splice variants should be dealt<BR>
+    with OK and treated as paralogues. This will only cause problems if the postdup=T option is used, which restricts<BR>
+    orthologues returned to be within the last post-duplication clade for the sequence.<BR>
+<BR>
+    The second [orthdb] is the list of proteins from which the orthologues will be extracted. The seqin sequences are<BR>
+    then BLASTed against the orthdb and processed (see below) to retain putative orthologues using an estimation of the<BR>
+    phylogenetic relationships based on pairwise sequences similarities.<BR>
+<BR>
+    NB. As of version 2.0, gopher=FILE has been replaced with seqin=FILE for greater rje python consistency. The allqry<BR>
+    option has been removed. Please cleanup the input data into a desired non-redundant dataset before running GOPHER.<BR>
+    (In many ways, GOPHER's strength is it's capacity to be run for a single sequence of interest rather than a whole<BR>
+    genome, and it is this functionality that has been concentrated on for use with PRESTO and SLiM Pickings etc.) The<BR>
+    output of statistics for each GOPHER run has also been discontinued for now but may be reintroduced with future<BR>
+    versions. The phosalign command (to produce a table of potential phosphorylation sites (e.g. S,T,Y) across<BR>
+    orthologues for special conservation of phosphorylation prediction analyses) has also been discontinued for now.<BR>
+<BR>
+    Version 2.1 has tightened up on the use of rje_seq parameters that were causing trouble otherwise. It is now the<BR>
+    responsibility of the user to make sure that the orthologue database meets the desired criteria. Duplicate accession<BR>
+    numbers will not be tolerated by GOPHER and (arbitrary) duplicates will be deleted if the sequences are the same, or<BR>
+    renamed otherwise. Renaming may cause problems later. It is highly desirable not to have two proteins with the same<BR>
+    accession number but different amino acid sequences. The following commands are added to the rje_seq object when input<BR>
+    is read: accnr=T unkspec=F specnr=F gnspacc=T. Note that unknown species are also not permitted.<BR>
+<BR>
+    The process for dataset assembly is as follows for each protein :<BR>
+<BR>
+    1. BLAST against orthdb [orthblast]<BR>
+        > BLASTs saved in BLAST/AccNum.blast<BR>
+    2. Work through BLAST hits, indentifying paralogues (query species duplicates) and the closest homologue from each<BR>
+    other species. This involves a second BLAST of the query versus original BLAST hits (e-value=10, no complexity<BR>
+    filter). The best sequence from each species is kept, i.e. the one with the best similarity to the query and not part<BR>
+    of a clade with any paralogue that excludes the query. (If postdup=T, the hit must be in the query's post duplication<BR>
+    clade.) In addition hits:  [orthfas]<BR>
+        * Must have minimum identity level with Query<BR>
+        * Must be one of the 'good species' [goodspec=LIST]<BR>
+        > Save reduced sequences as ORTH/AccNum.orth.fas<BR>
+        > Save paralogues identified (and meeting minsim settings) in PARA/AccNum.para.fas<BR>
+    3. Align sequences with MUSCLE  [orthalign]<BR>
+        > ALN/AccNum.orthaln.fas<BR>
+    4. Generate an unrooted tree with (ClustalW or PHYLIP)  [orthtree]<BR>
+        > TREE/AccNum.orth.nsf<BR>
+<BR>
+    Optional paralogue/subfamily output:  (These are best not used with Force=T or FullForce=T)<BR>
+    2a. Alignment of query protein and any paralogues >minsim threshold (paralign=T/F). The parasplice=T/F controls<BR>
+    whether splice variants are in these paralogue alignments (where identified using AccNum-X notation).<BR>
+        > PARALN/AccNum.paraln.fas<BR>
+    2b. Pairwise combinations of paralogues and their orthologues aligned, with "common" orthologues removed from the<BR>
+    dataset, with a rooted tree and group data for BADASP analysis etc. (parafam=T)<BR>
+        > PARAFAM/AccNum+ParaAccNum.parafam.fas<BR>
+        > PARAFAM/AccNum+ParaAccNum.parafam.nsf<BR>
+        > PARAFAM/AccNum+ParaAccNum.parafam.grp<BR>
+    2c. Combined protein families consisting of a protein, all the paralogues > minsim and all orthologues for each in a<BR>
+    single dataset. Unaligned. (gopherfam=T)<BR>
+        > SUBFAM/AccNum.subfam.fas<BR>
+    *NB.* The subfamily outputs involve Gopher calling itself to ensure the paralogues have gone through the Gopher<BR>
+    process themselves. This could potentially cause conflict if forking is used.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    ### Basic Input/Output ###<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Fasta file of 'query' sequences for orthology discovery []<BR>
+    <LI><B><FONT COLOR=RED>orthdb=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Fasta file with pool of sequences for orthology discovery []. Should contain query sequences.<BR>
+    <LI><B><FONT COLOR=RED>startfrom=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Accession Number / ID to start from. (Enables restart after crash.) [None]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether to analyse DNA sequences (not optimised) [False]<BR>
+<BR>
+    ### GOPHER run control parameters ###<BR>
+    orthblast   : Run to blasting versus orthdb (Stage 1).<BR>
+    orthfas     : Run to output of orthologues (Stage 2). <BR>
+    orthalign   : Run to alignment of orthologues (Stage 3).<BR>
+    orthtree    : Run to tree-generation (Stage 4). [default!]<BR>
+<BR>
+    ### GOPHER Orthologue identifcation Parameters ###<BR>
+    <LI><B><FONT COLOR=RED>postdup=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to align only post-duplication sequences [False]<BR>
+    <LI><B><FONT COLOR=RED>minsim=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum %similarity of Query for each "orthologue" [40.0]<BR>
+    <LI><B><FONT COLOR=RED>simfocus=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Style of similairy comparison used for MinSim and "Best" sequence identification [query]<BR>
+        - query = %query must > minsim (Best if query is ultimate focus and maximises closeness of returned orthologues)<BR>
+        - hit = %hit must > minsim (Best if lots of sequence fragments are in searchdb and should be retained)<BR>
+        - either = %query > minsim OR %hit > minsim (Best if both above conditions are true)<BR>
+        - both = %query > minsim AND %hit > minsim (Most stringent setting)<BR>
+    <LI><B><FONT COLOR=RED>gablamo=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>GABLAMO measure to use for similarity measures [Sim]<BR>
+        - ID = %Identity (from BLAST)<BR>
+        - Sim = %Similarity (from BLAST)<BR>
+        - Len = %Coverage (from BLAST)<BR>
+    <LI><B><FONT COLOR=RED>goodX=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>Filters where only sequences meeting the requirement of LIST are kept.<BR>
+                      LIST may be a list X,Y,..,Z or a FILE which contains a list [None]<BR>
+                        - goodacc  = list of accession numbers<BR>
+                        - goodseq  = list of sequence names<BR>
+                        - goodspec = list of species codes<BR>
+                        - gooddb   = list of source databases<BR>
+                        - gooddesc = list of terms that, at least one of which must be in description line<BR>
+    <LI><B><FONT COLOR=RED>badX=</FONT><FONT COLOR=DARKRED>LIST</FONT>       : </B>As goodX but excludes rather than retains filtered sequences<BR>
+<BR>
+    ### Additional run control options ###<BR>
+    <LI><B><FONT COLOR=RED>repair=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Repair mode - replace previous files if date mismatches or files missing.<BR>
+                      (Skip missing files if False) [True]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to force execution at current level even if results are new enough [False]<BR>
+    <LI><B><FONT COLOR=RED>fullforce=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to force current and previous execution even if results are new enough [False]<BR>
+    <LI><B><FONT COLOR=RED>dropout=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to "drop out" at earlier phases, or continue with single sequence [False]<BR>
+    <LI><B><FONT COLOR=RED>ignoredate=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Ignores the age of files and only replaces if missing [False]<BR>
+    <LI><B><FONT COLOR=RED>savespace=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Save space by deleting intermediate blast files during orthfas [True]<BR>
+    <LI><B><FONT COLOR=RED>maxpara=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum number of paralogues to consider (large gene families can cause problems) [50]<BR>
+<BR>
+    ### Additional Output Options ###<BR>
+    <LI><B><FONT COLOR=RED>paralign=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to produce paralogue alignments (>minsim) in PARALN/ (assuming run to orthfas+) [False]<BR>
+    <LI><B><FONT COLOR=RED>parasplice=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Whether splice variants (where identified) are counted as paralogues [False]<BR>
+    <LI><B><FONT COLOR=RED>parafam=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to paralogue paired subfamily alignments (>minsim) (assuming run to orthfas+) [False]<BR>
+    <LI><B><FONT COLOR=RED>gopherfam=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to combined paralogous gopher orthologues into protein families (>minsim) (assuming run to orthfas+) [False]<BR>
+    <LI><B><FONT COLOR=RED>sticky=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Switch on "Sticky Orthologous Group generation" [False]<BR>
+    <LI><B><FONT COLOR=RED>stiggid=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Base for Stigg ID numbers [STIGG]<BR>
+<BR>
+<B>Uses general modules:</B> copy, gc, glob, os, string, sys, threading, time<BR>
+<B>Uses RJE modules:</B> rje, rje_blast, rje_dismatrix, rje_seq, rje_tree<BR>
+<B>Other modules needed:</B> rje_ancseq, rje_pam, rje_sequence, rje_tree_group, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="ned_eigenvalues"><H2>*** Module ned_eigenvalues *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       ned_eigenvalues<BR>
+<B>Description:</B>  Modified N. Davey Relative Local Conservation module<BR>
+<B>Version:</B>      1.0<BR>
+<B>Last Edit:</B>    03/09/09<BR>
+<B>Copyright (C) 2009 Norman E. Davey & Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent module.<BR>
+<BR>
+<B>Uses general modules:</B> operator, math, random<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="ned_rankbydistribution"><H2>*** Module ned_rankbydistribution *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       ned_rankbydistribution<BR>
+<B>Description:</B>  Modified SLiMFinder stats module<BR>
+<B>Version:</B>      1.0<BR>
+<B>Last Edit:</B>    03/09/09<BR>
+<B>Copyright (C) 2009 Norman E. Davey & Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is a stripped down template for methods only. This is for when a class has too many methods and becomes<BR>
+    untidy. In this case, methods can be moved into a methods module and 'self' replaced with the relevant object.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent module.<BR>
+<BR>
+<B>Uses general modules:</B> re, copy, random, math, sys, time, os, pickle, sets, string, traceback<BR>
+<B>Uses RJE modules:</B> rje_seq, rje_uniprot, rje, rje_blast, rje_slim<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje"><H2>*** Module rje *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje<BR>
+<B>Description:</B>  Contains General Objects for all my (Rich's) scripts<BR>
+<B>Version:</B>      3.12<BR>
+<B>Last Edit:</B>    16/11/10<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    General module containing Classes used by all my scripts plus a number of miscellaneous methods.<BR>
+    - Output to Screen, Commandline parameters and Log Files<BR>
+<BR>
+    Commandline options are all in the form X=Y. Where Y is to include spaces, use X="Y".<BR>
+<BR>
+<B>General Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>v=</FONT><FONT COLOR=DARKRED>X</FONT>             : </B>Sets verbosity (-1 for silent) [0]<BR>
+    <LI><B><FONT COLOR=RED>i=</FONT><FONT COLOR=DARKRED>X</FONT>             : </B>Sets interactivity (-1 for full auto) [0]<BR>
+    <LI><B><FONT COLOR=RED>log=</FONT><FONT COLOR=DARKRED>FILE</FONT>        : </B>Redirect log to FILE [Default = calling_program.log]<BR>
+    <LI><B><FONT COLOR=RED>newlog=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Create new log file. [Default = False: append log file]<BR>
+    <LI><B><FONT COLOR=RED>silent=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>If set to True will not write to screen or log. [False]<BR>
+    <LI><B><FONT COLOR=RED>errorlog=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>If given, will write errors to an additional error file. [None]<BR>
+    help            : Print help to screen<BR>
+<BR>
+<B>Program-Specific Commands:</B> (Some programs only)<BR>
+    <LI><B><FONT COLOR=RED>basefile=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>This will set the 'root' filename for output files (FILE.*), including the log<BR>
+    <LI><B><FONT COLOR=RED>outfile=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>This will set the 'root' filename for output files (FILE.*), excluding the log<BR>
+    <LI><B><FONT COLOR=RED>delimit=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Sets standard delimiter for results output files [\t]<BR>
+    <LI><B><FONT COLOR=RED>mysql=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>MySQL output<BR>
+    <LI><B><FONT COLOR=RED>append=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Append to results files rather than overwrite [False]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Force to regenerate data rather than keep old results [False]<BR>
+    <LI><B><FONT COLOR=RED>backups=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to generate backup files (True) or just overwrite without asking (False) [True]<BR>
+    <LI><B><FONT COLOR=RED>maxbin=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum number of trials for using binomial (else use Poisson) [-]<BR>
+        <BR>
+<B>System Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>win32=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Run in Win32 Mode [False]<BR>
+    pwin            : Run in PythonWin (** Must be 'commandline', not in ini file! **)<BR>
+    cerberus        : Run on Cerberus cluster at RCSI<BR>
+    <LI><B><FONT COLOR=RED>memsaver=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Some modules will have a memsaver option to save memory usage [False]<BR>
+    <LI><B><FONT COLOR=RED>runpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>    : </B>Run program from given path (log files and some programs only) [path called from]<BR>
+    <LI><B><FONT COLOR=RED>rpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>      : </B>Path to installation of R ['c:\\Program Files\\R\\R-2.6.2\\bin\\R.exe']<BR>
+    <LI><B><FONT COLOR=RED>soaplab=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Implement special options/defaults for SoapLab implementations [False]<BR>
+<BR>
+<B>Forking Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>noforks=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to avoid forks [False]<BR>
+    <LI><B><FONT COLOR=RED>forks=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Number of parallel sequences to process at once [0]<BR>
+    <LI><B><FONT COLOR=RED>killforks=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Number of seconds of no activity before killing all remaining forks. [3600]<BR>
+<BR>
+<B>Classes:</B><BR>
+    RJE_Object(log=None,cmd_list=[]):<BR>
+        - Metclass for inheritance by other classes.<BR>
+        >> log:Log = rje.Log object<BR>
+        >> cmd_list:List = List of commandline variables<BR>
+        On intiation, this object:<BR>
+        - sets the Log object (if any)<BR>
+        - sets verbosity and interactive attributes<BR>
+        - calls the _setAttributes() method to setup class attributes<BR>
+        - calls the _cmdList() method to process relevant Commandline Parameters   <BR>
+    Log(itime=time.time(),cmd_list=[]):<BR>
+        - Handles log output; printing to log file and error reporting<BR>
+        >> itime:float = initiation time<BR>
+        >> cmd_list:list of commandline variables<BR>
+    Info(prog='Unknown',vers='X',edit='??/??/??',desc='Python script',author='Unknown',ptime=None):<BR>
+        - Stores intro information for a program.<BR>
+        >> prog:str = program name<BR>
+        >> vers:str = version number<BR>
+        >> edit:str = last edit date<BR>
+        >> desc:str = program description<BR>
+        >> author:str = author name<BR>
+        >> ptime:float = starting time of program, time.time()<BR>
+    Out(cmd=[]):<BR>
+        - Handles basic generic output to screen based on Verbosity and Interactivity for modules without classes.<BR>
+        >> cmd:list = list of command-line arguments<BR>
+<BR>
+<B>Uses general modules:</B> glob, math, os, random, re, string, sys, time, traceback<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_aaprop"><H2>*** Module rje_aaprop *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_aaprop<BR>
+<B>Description:</B>  AA Property Matrix Module<BR>
+<B>Version:</B>      0.1<BR>
+<B>Last Edit:</B>    18/05/06<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Takes an amino acid property matrix file and reads into an AAPropMatrix object. Converts in an all by all property<BR>
+    difference matrix. By default, gaps and Xs will be given null properties (None) unless part of input file.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>aaprop=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Amino Acid property matrix file. [aaprop.txt]<BR>
+    <LI><B><FONT COLOR=RED>aagapdif=</FONT><FONT COLOR=DARKRED>X</FONT>  : </B>Property difference given to amino acid vs gap comparisons [5]<BR>
+    <LI><B><FONT COLOR=RED>aanulldif=</FONT><FONT COLOR=DARKRED>X</FONT> : </B>Property difference given to amino acid vs null values (e.g. X) [0.5]<BR>
+<BR>
+<B>Uses general modules:</B> re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_ancseq"><H2>*** Module rje_ancseq *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_ancseq<BR>
+<B>Description:</B>  Ancestral Sequence Prediction Module<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    08/01/07<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the objects and methods for ancestral sequence prediction. Currently, only GASP (Edwards & Shields<BR>
+    2004) is implemented. Other methods may be incorporated in the future.<BR>
+<BR>
+<B>GASP Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>fixpam=</FONT><FONT COLOR=DARKRED>X\t</FONT>: </B>PAM distance fixed to X [0].<BR>
+    <LI><B><FONT COLOR=RED>rarecut=</FONT><FONT COLOR=DARKRED>X\t</FONT>: </B>Rare aa cut-off [0.05].<BR>
+    <LI><B><FONT COLOR=RED>fixup=</FONT><FONT COLOR=DARKRED>T/F\t</FONT>: </B>Fix AAs on way up (keep probabilities) [True].<BR>
+    <LI><B><FONT COLOR=RED>fixdown=</FONT><FONT COLOR=DARKRED>T/F\t</FONT>: </B>Fix AAs on initial pass down tree [False].<BR>
+    <LI><B><FONT COLOR=RED>ordered=</FONT><FONT COLOR=DARKRED>T/F\t</FONT>: </B>Order ancestral sequence output by node number [False].<BR>
+    <LI><B><FONT COLOR=RED>pamtree=</FONT><FONT COLOR=DARKRED>T/F\t</FONT>: </B>Calculate and output ancestral tree with PAM distances [True].<BR>
+    <LI><B><FONT COLOR=RED>desconly=</FONT><FONT COLOR=DARKRED>T/F\t</FONT>: </B>Limits ancestral AAs to those found in descendants [True].<BR>
+    <LI><B><FONT COLOR=RED>xpass=</FONT><FONT COLOR=DARKRED>X\t</FONT>: </B>How many extra passes to make down & up tree after initial GASP [1].<BR>
+<BR>
+<B>Classes:</B><BR>
+    Gasp(log=None,cmd_list=[],tree=None,ancfile='gasp'):<BR>
+        - Handles main GASP algorithm.<BR>
+        >> log:Log = rje.Log object<BR>
+        >> cmd_list:List = List of commandline variables<BR>
+        >> tree:Tree = rje_tree.Tree Object<BR>
+        >> ancfile:str = output filename (basefile))        <BR>
+    GaspNode(realnode,alphabet,log):<BR>
+        - Used by Gasp Class to handle specific node data during GASP.<BR>
+        >> realnode:Node Object (rje_tree.py)<BR>
+        >> alphabet:list of amino acids for use in GASP<BR>
+        >> log:Log Object<BR>
+<BR>
+<B>Uses general modules:</B> copy, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_pam<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_blast"><H2>*** Module rje_blast *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_blast<BR>
+<B>Description:</B>  BLAST Control Module<BR>
+<B>Version:</B>      1.10<BR>
+<B>Last Edit:</B>    09/06/09<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Performs BLAST searches and loads results into objects. Peforms GABLAM conversion of local alignments into global<BR>
+    alignment statistics. <BR>
+<BR>
+<B>Objects:</B><BR>
+    BLASTRun = Full BLAST run<BR>
+    BLASTSearch = Information for a single Query search within a BLASTRun<BR>
+    BLASTHit = Detailed Information for a single Query-Hit pair within BLASTRun<BR>
+    PWAln = Detailed Information for each aligned section of a Query-Hit Pair<BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>blastpath=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>path for blast files [c:/bioware/blast/] *Use fwd slashes (*Cerberus is special!)<BR>
+    <BR>
+    <LI><B><FONT COLOR=RED>blastp=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>BLAST program (BLAST -p X) [blastp]<BR>
+    <LI><B><FONT COLOR=RED>blasti=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Input file (BLAST -i FILE) [None]<BR>
+    <LI><B><FONT COLOR=RED>blastd=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>BLAST database (BLAST -d FILE) [None]<BR>
+    <LI><B><FONT COLOR=RED>formatdb=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to (re)format BLAST database [False]<BR>
+    <LI><B><FONT COLOR=RED>blasto=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Output file (BLAST -o FILE) [*.blast]<BR>
+<BR>
+    <LI><B><FONT COLOR=RED>blaste=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>E-Value cut-off for BLAST searches (BLAST -e X) [1e-4]<BR>
+    <LI><B><FONT COLOR=RED>blastv=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Number of one-line hits per query (BLAST -v X) [500]<BR>
+    <LI><B><FONT COLOR=RED>blastb=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Number of hit alignments per query (BLAST -b X) [250]  <BR>
+<BR>
+    <LI><B><FONT COLOR=RED>blastf=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Complexity Filter (BLAST -F X) [True]<BR>
+    <LI><B><FONT COLOR=RED>blastcf=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Use BLAST Composition-based statistics (BLAST -C X) [False]<BR>
+    <LI><B><FONT COLOR=RED>blastg=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Gapped BLAST (BLAST -g X) [True]<BR>
+<BR>
+    <LI><B><FONT COLOR=RED>blastopt=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>File containing raw BLAST options (applied after all others) [] <BR>
+<BR>
+<B>Uses general modules:</B> os, re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_dismatrix_V2"><H2>*** Module rje_dismatrix_V2 *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_dismatrix<BR>
+<B>Description:</B>  Distance Matrix Module <BR>
+<B>Version:</B>      2.4<BR>
+<B>Last Edit:</B>    16/06/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    DisMatrix Class. Stores distance matrix data and contains methods for extra calculations, such as MST. If pylab is<BR>
+    installed, a distance matrix can also be turned into a heatmap.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>loadmatrix=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Loads a matrix from FILE [None]<BR>
+    <LI><B><FONT COLOR=RED>symmetric=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether the matrix should be symmetrical (e.g. DisAB = DisBA) [False]<BR>
+    <LI><B><FONT COLOR=RED>outmatrix=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Type for output matrix - text / mysql / phylip<BR>
+<BR>
+<B>Uses general modules:</B> copy, os, re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_disorder"><H2>*** Module rje_disorder *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_disorder<BR>
+<B>Description:</B>  Disorder Prediction Module<BR>
+<B>Version:</B>      0.7<BR>
+<B>Last Edit:</B>    08/09/10<BR>
+<B>Copyright (C) 2006  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module currently has limited function and no standalone capability, though this may be added with time. It is<BR>
+    designed for use with other modules. The disorder Class can be given a sequence and will run the appropriate<BR>
+    disorder prediction software and store disorder prediction results for use in other programs. The sequence will have<BR>
+    any gaps removed.<BR>
+<BR>
+    Currently four disorder prediction methods are implemented:<BR>
+    * IUPred : Dosztanyi Z, Csizmok V, Tompa P & Simon I (2005). J. Mol. Biol. 347, 827-839. This has to be installed<BR>
+    locally. It is available on request from the IUPred website and any use of results should cite the method. (See<BR>
+    http://iupred.enzim.hu/index.html for more details.) IUPred returns a value for each residue, which by default,<BR>
+    is determined to be disordered if > 0.5.<BR>
+    * FoldIndex : This is run directly from the website (http://bioportal.weizmann.ac.il/fldbin/findex) and more simply<BR>
+    returns a list of disordered regions. You must have a live web connection to use this method!<BR>
+    * ANCHOR : Meszaros B, Simon I & Dosztanyi Z (2009). PLoS Comput Biol 5(5): e1000376. This has to be installed<BR>
+    locally. It is available on request from the ANCHOR website and any use of results should cite the method. (See<BR>
+    http://anchor.enzim.hu/ for more details.) ANCHOR returns a probability value for each residue, which by default,<BR>
+    is determined to be disordered if > 0.5.<BR>
+    * Parse: Parsed disorder from protein sequence name, e.g. DisProt download.<BR>
+    #X-Y = disordered region; &X-Y = ordered region [0.0]<BR>
+<BR>
+    For IUPred, the individual residue results are stored in Disorder.list['ResidueDisorder']. For both methods, the<BR>
+    disordered regions are stored in Disorder.list['RegionDisorder'] as (start,stop) tuples.<BR>
+    <BR>
+<B>Commandline:</B><BR>
+    ### General Options ###<BR>
+    <LI><B><FONT COLOR=RED>disorder=</FONT><FONT COLOR=DARKRED>X</FONT>  : </B>Disorder method to use (iupred/foldindex/anchor/parse) [iupred]<BR>
+    <LI><B><FONT COLOR=RED>iucut=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Cut-off for IUPred/ANCHOR results [0.2]<BR>
+    <LI><B><FONT COLOR=RED>iumethod=</FONT><FONT COLOR=DARKRED>X</FONT>  : </B>IUPred method to use (long/short) [short]<BR>
+    <LI><B><FONT COLOR=RED>sequence=</FONT><FONT COLOR=DARKRED>X</FONT>  : </B>Sequence to predict disorder for (autorun) []<BR>
+    <LI><B><FONT COLOR=RED>name=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Name of sequence to predict disorder for []<BR>
+    <LI><B><FONT COLOR=RED>minregion=</FONT><FONT COLOR=DARKRED>X</FONT> : </B>Minimum length of an ordered/disordered region [0]<BR>
+<BR>
+    ### System Settings ###<BR>
+    <LI><B><FONT COLOR=RED>iupath=</FONT><FONT COLOR=DARKRED>PATH</FONT> : </B>The full path to the IUPred exectuable [c:/bioware/iupred/iupred.exe]<BR>
+    <LI><B><FONT COLOR=RED>anchor=</FONT><FONT COLOR=DARKRED>PATH</FONT> : </B>Full path to ANCHOR executable []<BR>
+    <LI><B><FONT COLOR=RED>filoop=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Number of times to try connecting to FoldIndex server [10]<BR>
+    <LI><B><FONT COLOR=RED>fisleep=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>Number of seconds to sleep between attempts [2]<BR>
+    <LI><B><FONT COLOR=RED>iuchdir=</FONT><FONT COLOR=DARKRED>T/F</FONT> : </B>Whether to change to IUPred directory and run (True) or rely on IUPred_PATH env variable [False]<BR>
+<BR>
+<B>Uses general modules:</B> copy, os, string, sys, time, urllib2<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_hmm"><H2>*** Module rje_hmm *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_hmm<BR>
+<B>Description:</B>  HMMer Control Module<BR>
+<B>Version:</B>      1.3<BR>
+<B>Last Edit:</B>    25/11/08<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is designed to perform basic HMM functions using the HMMer program. Currently, there are three functions<BR>
+    that may be performed, separately or consecutively:<BR>
+    * 1. Use hmmbuild to construct HMMs from input sequence files<BR>
+    * 2. Search a sequence database with HMMs files<BR>
+    * 3. Convert HMMer output into a delimited text file of results.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    ## Build Options ##<BR>
+    <LI><B><FONT COLOR=RED>makehmm=</FONT><FONT COLOR=DARKRED>LIST</FONT>        : </B>Sequence file(s). Can include wildcards [None]<BR>
+    <LI><B><FONT COLOR=RED>hmmcalibrate=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to calibrate HMM files once made [True]<BR>
+<BR>
+    ## Search Options ##    <BR>
+    <LI><B><FONT COLOR=RED>hmm=</FONT><FONT COLOR=DARKRED>LIST</FONT>        : </B>HMM file(s). Can include wildcards. [*.hmm]<BR>
+    <LI><B><FONT COLOR=RED>searchdb=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>Fasta file to search with HMMs [None]<BR>
+    <LI><B><FONT COLOR=RED>hmmoptions=</FONT><FONT COLOR=DARKRED>LIST</FONT> : </B>List or file of additional HMMer search options (joined by whitespace) []<BR>
+    <LI><B><FONT COLOR=RED>hmmpfam=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Performs standard HMMer PFam search (--cut_ga) (or processes if present) [False]<BR>
+    <LI><B><FONT COLOR=RED>hmmout=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Pipe results of HMM searches into FILE [None]<BR>
+    <LI><B><FONT COLOR=RED>hmmres=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of HMM search results files to convert (wildcards allowed) []<BR>
+    <LI><B><FONT COLOR=RED>hmmtab=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Delimited table of results ('None' to skip) [searchdb.tdt]<BR>
+    <LI><B><FONT COLOR=RED>cleanres=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Option to reduce size of HMM results file by removing no-hit sequences [True]<BR>
+<BR>
+    ## System Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>hmmerpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Path for hmmer files [/home/richard/Bioware/hmmer-2.3.2/src/] <BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to force regeneration of new HMMer results if already existing [False]<BR>
+    <LI><B><FONT COLOR=RED>gzip=</FONT><FONT COLOR=DARKRED>T/F</FONT>        : </B>Whether to gzip (and gunzip) HMMer results files (not Windows) [True]<BR>
+    <BR>
+<B>Classes:</B><BR>
+    HMMRun Object = Full HMM run<BR>
+    HMMSearch Object = Information for a single Query search within a BLASTRun<BR>
+    HMMHit Object = Detailed Information for a single Query-Hit pair within BLASTRun<BR>
+    rje_blast.PWAln Object = Detailed Information for each aligned section of a Query-Hit Pair<BR>
+<BR>
+<B>Uses general modules:</B> glob, os, re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_blast<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_menu"><H2>*** Module rje_menu *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_menu<BR>
+<B>Description:</B>  Generic Menu Methods Module<BR>
+<B>Version:</B>      0.2<BR>
+<B>Last Edit:</B>    20/08/09<BR>
+<B>Copyright (C) 2006  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is designed to contain generic menu methods for use with any RJE Object. At least, that's the plan...<BR>
+<BR>
+<B>Commandline:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent module.<BR>
+<BR>
+<B>Uses general modules:</B> os, string, sys<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_motif_V3"><H2>*** Module rje_motif_V3 *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_motif<BR>
+<B>Description:</B>  Motif Class and Methods Module<BR>
+<B>Version:</B>      3.0<BR>
+<B>Last Edit:</B>    15/02/07<BR>
+<B>Copyright (C) 2006  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the Motif class for use with both Slim Pickings and PRESTO, and associated methods. This basic<BR>
+    Motif class stores its pattern in several forms:<BR>
+    - info['Sequence'] stores the original pattern given to the Motif object<BR>
+    - list['PRESTO'] stores the pattern in a list of PRESTO format elements, where each element is a discrete part of<BR>
+      the motif pattern<BR>
+    - list['Variants'] stores simple strings of all the basic variants - length and ambiguity - for indentifying the "best"<BR>
+      variant for any given match<BR>
+    - dict['Search'] stores the actual regular expression variants used for searching, which has a separate entry for<BR>
+      each length variant - otherwise Python RegExp gets confused! Keys for this dictionary relate to the number of<BR>
+      mismatches allowed in each variant.<BR>
+<BR>
+    The Motif Class is designed for use with the MotifList class. When a motif is added to a MotifList object, the<BR>
+    Motif.format() command is called, which generates the 'PRESTO' list. After this - assuming it is to be kept -<BR>
+    Motif.makeVariants() makes the 'Variants' list. If creating a motif object in another module, these method should be<BR>
+    called before any sequence searching is performed. If mismatches are being used, the Motif.misMatches() method must<BR>
+    also be called.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    These options should be listed in the docstring of the module using the motif class:<BR>
+    - <LI><B><FONT COLOR=RED>alphabet=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of letters in alphabet of interest [AAs]<BR>
+    - <LI><B><FONT COLOR=RED>ambcut=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>Cut-off for max number of choices in ambiguous position to be shown as variant (0=All) [10]<BR>
+    - <LI><B><FONT COLOR=RED>trimx=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Trims Xs from the ends of a motif [False]<BR>
+<BR>
+<B>Uses general modules:</B> copy, math, os, re, string, sys<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_motif_stats"><H2>*** Module rje_motif_stats *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_motif_stats<BR>
+<B>Description:</B>  Motif Statistics Methods Module<BR>
+<B>Version:</B>      1.0<BR>
+<B>Last Edit:</B>    01/02/07<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the Alignment Conservation methods for motifs, as well as other calculations needing occurrence<BR>
+    data. This module is designed to be used by the MotifList class, which contains the relevant commandline options.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent module.<BR>
+<BR>
+<B>Uses general modules:</B> copy, os, string, sys<BR>
+<B>Uses RJE modules:</B> gopher_V2, rje, rje_blast, rje_disorder, rje_motif_V3, rje_seq, rje_sequence<BR>
+<B>Other modules needed:</B> rje_seq modules<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_motiflist"><H2>*** Module rje_motiflist *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_motiflist<BR>
+<B>Description:</B>  RJE Motif List Module<BR>
+<B>Version:</B>      1.0<BR>
+<B>Last Edit:</B>    03/04/07<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the MotifList Class, which is designed to replace many of the functions that previously formed<BR>
+    part of the Presto Class. This class will then be used by PRESTO, SLiMPickings and CompariMotif (and others?) to<BR>
+    control Motif loading, redundancy and storage. MotifOcc objects will replace the previous PrestoSeqHit objects and<BR>
+    contain improved data commenting and retrieval methods. The MotifList class will contain methods for filtering motifs<BR>
+    according to individual or combined MotifOcc data.<BR>
+<BR>
+    The options below should be read in by the MotifList object when it is instanced with a cmd_list and therefore do not<BR>
+    need to be part of any class that makes use of this object unless it has conflicting settings.<BR>
+<BR>
+    The Motif Stats options are used by MotifList to calculate statistics for motif occurrences, though this data will<BR>
+    actually be stored in the MotifOcc objects themselves. This includes conservation statistics.<BR>
+<BR>
+    Note. Additional output parameters, such as motifaln and proteinaln settings, and stat filtering/novel scores are not<BR>
+    stored in this object, as they will be largely dependent on the main programs using the class, and the output from<BR>
+    those programs. (This also enables statfilters etc. to be used with stats not related to motifs and their occurrences<BR>
+    if desired.)<BR>
+<BR>
+<B>MotifList Commands:</B><BR>
+    ## Basic Motif Input/Formatting Parameters ##<BR>
+    <LI><B><FONT COLOR=RED>motifs=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>File of input motifs/peptides [None]<BR>
+                      Single line per motif format = 'Name Sequence #Comments' (Comments are optional and ignored)<BR>
+                      Alternative formats include fasta, SLiMDisc output and raw motif lists.<BR>
+    <LI><B><FONT COLOR=RED>minpep=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min length of motif/peptide X aa [2]<BR>
+    <LI><B><FONT COLOR=RED>minfix=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min number of fixed positions for a motif to contain [0]<BR>
+    <LI><B><FONT COLOR=RED>minic=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Min information content for a motif (1 fixed position = 1.0) [2.0]<BR>
+    <LI><B><FONT COLOR=RED>trimx=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Trims Xs from the ends of a motif [False]<BR>
+    <LI><B><FONT COLOR=RED>nrmotif=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to remove redundancy in input motifs [False]<BR>
+    <LI><B><FONT COLOR=RED>minimotif=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Input file is in minimotif format and will be reformatted (PRESTO File format only) [False]<BR>
+    <LI><B><FONT COLOR=RED>goodmotif=</FONT><FONT COLOR=DARKRED>LIST</FONT>  : </B>List of text to match in Motif names to keep (can have wildcards) []<BR>
+    <LI><B><FONT COLOR=RED>ambcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Cut-off for max number of choices in ambiguous position to be shown as variant [10]<BR>
+    <LI><B><FONT COLOR=RED>reverse=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Reverse the motifs - good for generating a test comparison data set [False]<BR>
+    <LI><B><FONT COLOR=RED>msms=</FONT><FONT COLOR=DARKRED>T/F</FONT>        : </B>Whether to include MSMS ambiguities when formatting motifs [False]<BR>
+<BR>
+    ## Motif Occurrence Statistics Options ##<BR>
+    <LI><B><FONT COLOR=RED>winsa=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Number of aa to extend Surface Accessibility calculation either side of motif [0]<BR>
+    <LI><B><FONT COLOR=RED>winhyd=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Number of aa to extend Eisenberg Hydrophobicity calculation either side of motif [0]<BR>
+    <LI><B><FONT COLOR=RED>windis=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Extend disorder statistic X aa either side of motif (use flanks *only* if negative) [0]<BR>
+    <LI><B><FONT COLOR=RED>winchg=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Extend charge calculations (if any) to X aa either side of motif [0]<BR>
+    <LI><B><FONT COLOR=RED>winsize=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Sets all of the above window sizes (use flanks *only* if negative) [0]<BR>
+    <LI><B><FONT COLOR=RED>slimchg=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Calculate Asolute, Net and Balance charge statistics (above) for occurrences [False]<BR>
+    <LI><B><FONT COLOR=RED>iupred=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Run IUPred disorder prediction [False]<BR>
+    <LI><B><FONT COLOR=RED>foldindex=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Run FoldIndex disorder prediction [False]<BR>
+    <LI><B><FONT COLOR=RED>iucut=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Cut-off for IUPred results (0.0 will report mean IUPred score) [0.0]<BR>
+    <LI><B><FONT COLOR=RED>iumethod=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>IUPred method to use (long/short) [short]<BR>
+    <LI><B><FONT COLOR=RED>domfilter=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Use the DomFilter options, reading domains from FILE [None] ?? Check how this works ??<BR>
+    <LI><B><FONT COLOR=RED>ftout=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Make a file of UniProt features for extracted parent proteins, where possible, incoroprating SLIMs [*.features.tdt]<BR>
+    <LI><B><FONT COLOR=RED>percentile=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Percentile steps to return in addition to mean [0]<BR>
+<BR>
+    ## Conservation Parameters ##   ??? Add separate SlimCons option ???<BR>
+    <LI><B><FONT COLOR=RED>usealn=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to search for and use alignemnts where present. [False]<BR>
+    <LI><B><FONT COLOR=RED>gopher=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use GOPHER to generate missing orthologue alignments in alndir - see gopher.py options [False]<BR>
+    <LI><B><FONT COLOR=RED>alndir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Path to alignments of proteins containing motifs [./] * Use forward slashes (/)<BR>
+    <LI><B><FONT COLOR=RED>alnext=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>File extension of alignment files, accnum.X [aln.fas]<BR>
+    <LI><B><FONT COLOR=RED>alngap=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to count proteins in alignments that have 100% gaps over motif (True) or (False) ignore<BR>
+                      as putative sequence fragments [False]  (NB. All X regions are ignored as sequence errors.)<BR>
+    <LI><B><FONT COLOR=RED>conspec=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>List of species codes for conservation analysis. Can be name of file containing list. [None]<BR>
+    <LI><B><FONT COLOR=RED>conscore=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Type of conservation score used:  [pos]<BR>
+                        - abs = absolute conservation of motif using RegExp over matched region<BR>
+                        - pos = positional conservation: each position treated independently <BR>
+                        - prop = conservation of amino acid properties<BR>
+                        - all = all three methods for comparison purposes<BR>
+    <LI><B><FONT COLOR=RED>consamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to calculate conservation allowing for degeneracy of motif (True) or of fixed variant (False) [True]<BR>
+    <LI><B><FONT COLOR=RED>consinfo=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Weight positions by information content (does nothing for conscore=abs) [True]<BR>
+    <LI><B><FONT COLOR=RED>consweight=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Weight given to global percentage identity for conservation, given more weight to closer sequences [0]<BR>
+                        - 0 gives equal weighting to all. Negative values will upweight distant sequences.<BR>
+    <LI><B><FONT COLOR=RED>posmatrix=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Score matrix for amino acid combinations used in pos weighting. (conscore=pos builds from propmatrix) [None]<BR>
+    <LI><B><FONT COLOR=RED>aaprop=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Amino Acid property matrix file. [aaprop.txt]<BR>
+<BR>
+    ## Alignment Settings ##<BR>
+    <LI><B><FONT COLOR=RED>protalndir=</FONT><FONT COLOR=DARKRED>PATH</FONT> : </B>Output path for Protein Alignments [ProteinAln/]<BR>
+    <LI><B><FONT COLOR=RED>motalndir=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Output path for Motif Alignments []<BR>
+    <LI><B><FONT COLOR=RED>flanksize=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Size of sequence flanks for motifs [30]<BR>
+    <LI><B><FONT COLOR=RED>xdivide=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Size of dividing Xs between motifs [10]<BR>
+<BR>
+    ## System Settings ##<BR>
+    <LI><B><FONT COLOR=RED>iupath=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>The full path to the IUPred exectuable [c:/bioware/iupred/iupred.exe]<BR>
+    ?? <LI><B><FONT COLOR=RED>memsaver=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to store all results in Objects (False) or clear as search proceeds (True) [True] ??<BR>
+    ?- should this be controlled purely by the calling program? Probably!<BR>
+    <LI><B><FONT COLOR=RED>fullforce=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to force regeneration of alignments using GOPHER<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_aaprop, rje_disorder, rje_motif_V3, rje_motif_cons, rje_scoring, rje_seq, rje_sequence,<BR>
+    rje_blast, rje_uniprot<BR>
+<B>Other modules needed:</B> rje_dismatrix, <BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_motifocc"><H2>*** Module rje_motifocc *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_motifocc<BR>
+<B>Description:</B>  Motif Occurrence Module<BR>
+<B>Version:</B>      0.0<BR>
+<B>Last Edit:</B>    29/01/07<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the MotifOcc class. This class if for storing methods and attributes pertinent to an individual<BR>
+    occurrence of a motif, i.e. one Motif instance in one sequence at one position. This class is loosely based on (and<BR>
+    should replace) the old PRESTO PrestoHit object. (And, to some extent, the PrestoSeqHit object.) This class is<BR>
+    designed to be flexible for use with PRESTO, SLiMPickings and CompariMotif, among others.<BR>
+<BR>
+    In addition to storing the standard info and stat dictionaries, this object will store a "Data" dictionary, which<BR>
+    contains the (program-specific) data to be output for a given motif. All data will be in string format. The<BR>
+    getData() and getStat() methods will automatically convert from string to numerics as needed.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    This module has no standalone functionality and should not be called from the commandline.<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_seq, rje_sequence<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_pam"><H2>*** Module rje_pam *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_pam<BR>
+<B>Description:</B>  Contains Objects for PAM matrices<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    16/11/10<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module handles functions associated with PAM matrices. A PAM1 matrix is read from the given input file and<BR>
+    multiplied by itself to give PAM matrices corresponding to greater evolutionary distance. (PAM1 equates to one amino acid<BR>
+    substitition per 100aa of sequence.) <BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>pamfile=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>Sets PAM1 input file [jones.pam]<BR>
+    <LI><B><FONT COLOR=RED>pammax=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Initial maximum PAM matrix to generate [100]<BR>
+    <LI><B><FONT COLOR=RED>pamcut=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Absolute maximum PAM matrix [1000]<BR>
+<BR>
+<B>Alternative PAM matrix commands:</B><BR>
+    <LI><B><FONT COLOR=RED>altpam=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Alternative to PAM file input = matrix needing scaling by aafreq [None]<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Sequence file from which to calculate AA freq for scaling [None]<BR>
+    <LI><B><FONT COLOR=RED>pamout=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Name for rescaled PAM matrix output [*.pam named after altpam=FILE]<BR>
+<BR>
+<B>Classes:</B><BR>
+    PamCtrl(rje.RJE_Object):<BR>
+        - Controls a set of PAM matrices.<BR>
+    PAM(pam,rawpamp,alpha):<BR>
+        - Individual PAM matrix.<BR>
+        >> pam:int = PAM distance<BR>
+        >> rawpamp:dictionary of substitution probabilities<BR>
+        >> alpha:list of amino acids (alphabet)<BR>
+<BR>
+<B>Uses general modules:</B> os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_scoring"><H2>*** Module rje_scoring *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_scoring<BR>
+<B>Description:</B>  Scoring and Ranking Methods for RJE Python Modules<BR>
+<B>Version:</B>      0.0<BR>
+<B>Last Edit:</B>    22/01/07<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains methods only for ranking, filtering and generating new scores from python dictionaries. At its<BR>
+    conception, this is for unifying and clarifying the new scoring and filtering options used by PRESTO & SLiMPickings,<BR>
+    though it is conceived that the methods will also be suitable for use in other/future programs.<BR>
+<BR>
+    The general format of expected data is a list of column headers, on which data may be filtered/ranked etc. or<BR>
+    combined to make new scores, and a dictionary containing the data for a given entry. The keys for the dictionary<BR>
+    should match the headers in a *case-insensitive* fashion. (The keys and headers will not be changed but will match<BR>
+    without using case, so do not have two case-sensitive variables, such as "A" and "a" unless they have the same<BR>
+    values.) !NB! For some methods, the case should have been matched.<BR>
+<BR>
+    Methods in this module will either return the input dictionary or list with additional elements (if calculating new<BR>
+    scores) or take a list of data dictionaries and return a ranked or filtered list.<BR>
+<BR>
+    Methods in this module:<BR>
+    * setupStatFilter(callobj,statlist,filterlist) = Makes StatFilter dictionary from statlist and filterlist<BR>
+    * statFilter(callobj,data,statfilter) = Filters data dictionary according to statfilter dictionary.<BR>
+    * setupCustomScores(callobj,statlist,scorelist,scoredict) = Checks and returns Custom Scores and related lists<BR>
+    <BR>
+<B>Commandline:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent modules.<BR>
+<BR>
+<B>Uses general modules:</B> copy, os, string, sys<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_seq"><H2>*** Module rje_seq *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_seq<BR>
+<B>Description:</B>  DNA/Protein sequence list module<BR>
+<B>Version:</B>      3.8<BR>
+<B>Last Edit:</B>    16/11/10<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Contains Classes and methods for sets of DNA and protein sequences. <BR>
+<BR>
+<B>Sequence Input/Output Commands:</B> <BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Loads sequences from FILE (fasta,phylip,aln,uniprot or fastacmd names from fasdb) [None]<BR>
+    <LI><B><FONT COLOR=RED>query=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Selects query sequence by name [None]<BR>
+    <LI><B><FONT COLOR=RED>acclist=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Extract only AccNums in list. LIST can be FILE or list of AccNums X,Y,.. [None]<BR>
+    <LI><B><FONT COLOR=RED>fasdb=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Fasta format database to extract sequences from [None]<BR>
+    <LI><B><FONT COLOR=RED>mapseq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Maps sequences from FILE to sequences of same name [None]<BR>
+    <LI><B><FONT COLOR=RED>seqout=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Saves 'tidied' sequences to FILE after loading and manipulations [None]<BR>
+    <LI><B><FONT COLOR=RED>reformat=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Outputs sequence in a particular format, where X is:<BR>
+                     - fasta/fas/phylip/scanseq/acclist/acc/idlist/fastacmd/teiresias/mysql/nexus/3rf/6rf/est6rf     [None]<BR>
+                     - if no seqout=FILE given, will use input file name as base and add appropriate exension.<BR>
+    #!# reformat=X may not be fully implemented. Report erroneous behaviour! #!#<BR>
+    <LI><B><FONT COLOR=RED>logrem=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to log removed sequences [True] - suggest False with filtering of large files!<BR>
+<BR>
+<B>Sequence Loading/Formatting Options:</B><BR>
+    <LI><B><FONT COLOR=RED>alphabet=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>Alphabet allowed in sequences [standard 1 letter AA codes]<BR>
+    <LI><B><FONT COLOR=RED>replacechar=</FONT><FONT COLOR=DARKRED>T/F</FONT> : </B>Whether to remove numbers and replace characters not found in the given alphabet with 'X' [True]<BR>
+    <LI><B><FONT COLOR=RED>autofilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Whether to automatically apply sequence filters etc. upon loading sequence [True]<BR>
+    <LI><B><FONT COLOR=RED>autoload=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to automatically load sequences upon initiating object [True]<BR>
+    <LI><B><FONT COLOR=RED>memsaver=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Minimise memory usage. Input sequences must be fasta. [False]<BR>
+    <LI><B><FONT COLOR=RED>degap=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Degaps each sequence [False]<BR>
+    <LI><B><FONT COLOR=RED>tidygap=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Removes any columns from alignments that are 100% gap [True]<BR>
+    <LI><B><FONT COLOR=RED>gnspacc=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Convert sequences into gene_SPECIES__AccNum format wherever possible. [False] <BR>
+    <LI><B><FONT COLOR=RED>seqtype=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Force program to read as DNA, RNA, Protein or Mixed (case insensitive; read=Will work it out) [None]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Alternative identification of sequences as DNA [False]<BR>
+    <LI><B><FONT COLOR=RED>mixed=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to allow auto-identification of mixed sequences types (else uses first seq only) [False]<BR>
+    <LI><B><FONT COLOR=RED>align=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether the sequences should be aligned. Will align if unaligned. [False]<BR>
+    <LI><B><FONT COLOR=RED>rna2dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Converts RNA to DNA [False]<BR>
+    <LI><B><FONT COLOR=RED>trunc=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Truncates each sequence to the first X aa. (Last X aa if -ve) (Useful for webservers like SingalP.) [0]<BR>
+    <LI><B><FONT COLOR=RED>usecase=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to output sequences in mixed case rather than converting all to upper case [False]<BR>
+    <LI><B><FONT COLOR=RED>case=</FONT><FONT COLOR=DARKRED>LIST</FONT>       : </B>List of positions to switch case, starting with first lower case (e.g case=20,-20 will have ends UC) []<BR>
+<BR>
+<B>Sequence Filtering Commands:</B><BR>
+    <LI><B><FONT COLOR=RED>filterout=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Saves filtered sequences (as fasta) into FILE. *NOTE: File is appended if append=T* [None]<BR>
+    <LI><B><FONT COLOR=RED>minlen=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum length of sequences [0]<BR>
+    <LI><B><FONT COLOR=RED>maxlen=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum length of sequences (<=0 = No maximum) [0]<BR>
+    <LI><B><FONT COLOR=RED>maxgap=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum proportion of sequence that may be gaps (<=0 = No maximum) [0]<BR>
+    <LI><B><FONT COLOR=RED>maxx=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>Maximum proportion of sequence that may be Xs (<=0 = No maximum; >=1 = Absolute no.) [0]<BR>
+    <LI><B><FONT COLOR=RED>maxglob=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Maximum proportion of sequence predicted to be ordered (<=0 = None; >=1 = Absolute) [0]<BR>
+    <LI><B><FONT COLOR=RED>minorf=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum ORF length for a DNA/EST translation (reformatting only) [0]<BR>
+    <LI><B><FONT COLOR=RED>minpoly=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Minimum length of poly-A tail for 3rf / 6rf EST translation (reformatting only) [20]<BR>
+    <LI><B><FONT COLOR=RED>gapfilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to filter gappy sequences upon loading [True]<BR>
+    <LI><B><FONT COLOR=RED>nosplice=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>If nosplice=T, UniProt splice variants will be filtered out [False]<BR>
+    <LI><B><FONT COLOR=RED>dblist=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of databases in order of preference (good to bad)<BR>
+                      [sprot,ipi,uniprot,trembl,ens_known,ens_novel,ens_scan]<BR>
+    <LI><B><FONT COLOR=RED>dbonly=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to only allow sequences from listed databases [False]<BR>
+    <LI><B><FONT COLOR=RED>unkspec=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether sequences of unknown species are allowed [True]<BR>
+    <LI><B><FONT COLOR=RED>accnr=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Check for redundant Accession Numbers/Names on loading sequences. [True]<BR>
+    <LI><B><FONT COLOR=RED>seqnr=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Make sequences Non-Redundant [False]<BR>
+    <LI><B><FONT COLOR=RED>nrid=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>%Identity cut-off for Non-Redundancy (GABLAMO) [100.0]<BR>
+    <LI><B><FONT COLOR=RED>nrsim=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>%Similarity cut-off for Non-Redundancy (GABLAMO) [None]      <BR>
+    <LI><B><FONT COLOR=RED>nralign=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Use ALIGN for non-redundancy calculations rather than GABLAMO [False]<BR>
+    <LI><B><FONT COLOR=RED>specnr=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Non-Redundancy within same species only [False]<BR>
+    <LI><B><FONT COLOR=RED>querynr=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Perform Non-Redundancy on Query species (True) or limit to non-Query species (False) [True]<BR>
+    <LI><B><FONT COLOR=RED>goodX=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>Filters where only sequences meeting the requirement of LIST are kept.<BR>
+                      LIST may be a list X,Y,..,Z or a FILE which contains a list [None]<BR>
+                        - goodacc  = list of accession numbers<BR>
+                        - goodseq  = list of sequence names<BR>
+                        - goodspec = list of species codes<BR>
+                        - gooddb   = list of source databases<BR>
+                        - gooddesc = list of terms that, at least one of which must be in description line<BR>
+    <LI><B><FONT COLOR=RED>badX=</FONT><FONT COLOR=DARKRED>LIST</FONT>       : </B>As goodX but excludes rather than retains filtered sequences<BR>
+<BR>
+<B>System Info Commands:</B>       * Use forward slashes for paths (/)<BR>
+    <LI><B><FONT COLOR=RED>blastpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Path to BLAST programs ['']           <BR>
+    <LI><B><FONT COLOR=RED>fastapath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Path to FASTA programs ['']          <BR>
+    <LI><B><FONT COLOR=RED>clustalw=</FONT><FONT COLOR=DARKRED>PATH</FONT>   : </B>Path to CLUSTALW program ['clustalw']<BR>
+    <LI><B><FONT COLOR=RED>mafft=</FONT><FONT COLOR=DARKRED>PATH</FONT>      : </B>Path to MAFFT alignment program ['mafft']<BR>
+    <LI><B><FONT COLOR=RED>muscle=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Path to MUSCLE ['muscle']            <BR>
+    <LI><B><FONT COLOR=RED>fas=</FONT><FONT COLOR=DARKRED>PATH</FONT>        : </B>Path to FSA alignment program ['fsa']            <BR>
+    <LI><B><FONT COLOR=RED>win32=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Run in Win32 Mode [False]<BR>
+    <LI><B><FONT COLOR=RED>alnprog=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Choice of alignment program to use (clustalw/muscle/mafft/fsa) [muscle]<BR>
+    <BR>
+<B>Sequence Manipulation/Function Commands:</B><BR>
+    pamdis      : Makes an all by all PAM distance matrix<BR>
+    <LI><B><FONT COLOR=RED>split=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Splits file into numbered files of X sequences. (Useful for webservers like TMHMM.)<BR>
+    <LI><B><FONT COLOR=RED>relcons=</FONT><FONT COLOR=DARKRED>FILE</FONT>: </B>Returns a file containing Pos AbsCons RelCons [None]<BR>
+    <LI><B><FONT COLOR=RED>relconwin=</FONT><FONT COLOR=DARKRED>X</FONT> : </B>Window size for relative conservation scoring [30]<BR>
+    <LI><B><FONT COLOR=RED>makepng=</FONT><FONT COLOR=DARKRED>T/F</FONT> : </B>Whether to make RelCons PNG files [False]<BR>
+    <LI><B><FONT COLOR=RED>seqname=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>Output sequence names for PNG files etc. (short/Name/Number/AccNum/ID) [short]<BR>
+<BR>
+<B>DisMatrix Options:</B><BR>
+    <LI><B><FONT COLOR=RED>outmatrix=</FONT><FONT COLOR=DARKRED>X</FONT> : </B>Type for output matrix - text / mysql / phylip<BR>
+<BR>
+<B>Special:</B><BR>
+    <LI><B><FONT COLOR=RED>blast2fas=</FONT><FONT COLOR=DARKRED>FILE1,FILE2,...,FILEn</FONT> : </B>Will blast sequences against list of databases and compile a fasta file of results per query<BR>
+        - use options from rje_blast.py for each individual blast (blastd=FILE will be over-ridden)<BR>
+        - saves results in AccNum.blast.fas and will append existing files!<BR>
+    <LI><B><FONT COLOR=RED>haqbat=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Generate a batch file (FILE) to run HAQESAC on generated BLAST files, with seqin as queries [None]<BR>
+<BR>
+<B>Classes:</B><BR>
+    SeqList(rje.RJE_Object):     <BR>
+        - Sequence List Class. Holds a list of Sequence Objects and has methods for manipulation etc.<BR>
+    Sequence(rje_sequence.Sequence):     <BR>
+        - Individual Sequence Class.    <BR>
+    DisMatrix(rje_dismatrix.DisMatrix):     <BR>
+        - Sequence Distance Matrix Class.<BR>
+    <BR>
+<B>Uses general modules:</B> copy, math, os, random, re, shutil, sre_constants, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_blast, rje_dismatrix, rje_pam, rje_sequence, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_sequence"><H2>*** Module rje_sequence *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_sequence<BR>
+<B>Description:</B>  DNA/Protein sequence object<BR>
+<B>Version:</B>      1.16<BR>
+<B>Last Edit:</B>    16/11/10<BR>
+<B>Copyright (C) 2006  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the Sequence Object used to store sequence data for all PEAT applications that used DNA or<BR>
+    protein sequences. It has no standalone functionality.<BR>
+<BR>
+    This modules contains all the methods for parsing out sequence information, including species and source database,<BR>
+    based on the format of the input sequences. If using a consistent but custom format for fasta description lines,<BR>
+    please contact me and I can add it to the list of formats currently recognised.<BR>
+<BR>
+<B>Uses general modules:</B> copy, os, random, re, sre_constants, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_disorder<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_slim"><H2>*** Module rje_slim *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       RJE_SLiM<BR>
+<B>Description:</B>  Short Linear Motif class module<BR>
+<B>Version:</B>      1.3<BR>
+<B>Last Edit:</B>    11/02/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains the new SLiM class, which replaces the old Motif class, for use with both SLiMFinder and<BR>
+    SLiMSearch. In addition, this module encodes some general motif methods. Note that the new methods are not<BR>
+    designed with Mass Spec data in mind and so some of the more complicated regexp designations for unknown amino acid<BR>
+    order etc. have been dropped. Because the SLiM class explicitly deals with *short* linear motifs, wildcard gaps are<BR>
+    capped at a max length of 9.<BR>
+<BR>
+    The basic SLiM class stores its pattern in several forms:<BR>
+    - info['Sequence'] stores the original pattern given to the Motif object<BR>
+    - info['Slim'] stores the pattern as a SLiMFinder-style string of defined elements and wildcard spacers<BR>
+    - dict['MM'] stores lists of Slim strings for each number of mismatches with flexible lengths enumerated. This is<BR>
+      used for actual searches in SLiMSearch.<BR>
+    - dict['Search'] stores the actual regular expression variants used for searching, which has a separate entry for<BR>
+      each length variant - otherwise Python RegExp gets confused! Keys for this dictionary relate to the number of<BR>
+      mismatches allowed in each variant and match dict['MM'].<BR>
+<BR>
+    The following were previously used by the Motif class and may be revived for the new SLiM class if needed:    <BR>
+    - list['Variants'] stores simple strings of all the basic variants - length and ambiguity - for indentifying the<BR>
+      "best" variant for any given match<BR>
+<BR>
+    The SLiM class is designed for use with the SLiMList class. When a SLiM is added to a SLiMList object, the<BR>
+    SLiM.format() command is called, which generates the 'Slim' string. After this - assuming it is to be kept -<BR>
+    SLiM.makeVariants() makes the 'Variants' list. If creating a motif object in another module, these method should be<BR>
+    called before any sequence searching is performed. If mismatches are being used, the SLiM.misMatches() method must<BR>
+    also be called.<BR>
+<BR>
+    SLiM occurrences are stored in the dict['Occ'] attribute. The keys for this are Sequence objects and values are<BR>
+    either a simple list of positions (1 to L) or a dictionary of attributes with positions as keys.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    These options should be listed in the docstring of the module using the motif class:<BR>
+    - <LI><B><FONT COLOR=RED>alphabet=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of letters in alphabet of interest [AAs]<BR>
+    - <LI><B><FONT COLOR=RED>ambcut=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>Cut-off for max number of choices in ambiguous position to be shown as variant (0=All) [10]<BR>
+    - <LI><B><FONT COLOR=RED>trimx=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Trims Xs from the ends of a motif [False]<BR>
+    - <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>           : </B>Whether motifs should be considered as DNA motifs [False]<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_slimcalc"><H2>*** Module rje_slimcalc *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_slimcalc<BR>
+<B>Description:</B>  SLiM Attribute Calculation Module<BR>
+<B>Version:</B>      0.4<BR>
+<B>Last Edit:</B>    03/06/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is based on the old rje_motifstats module. It is primarily for calculating empirical attributes of SLiMs<BR>
+    and their occurrences, such as Conservation, Hydropathy and Disorder. <BR>
+<BR>
+<B>Commandline:</B><BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Motif Occurrence Attribute Options ###<BR>
+    <LI><B><FONT COLOR=RED>slimcalc=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>List of additional attributes to calculate for occurrences - Cons,SA,Hyd,Fold,IUP,Chg,Comp []<BR>
+    <LI><B><FONT COLOR=RED>winsize=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Used to define flanking regions for calculations. If negative, will use flanks *only* [0]<BR>
+    <LI><B><FONT COLOR=RED>relconwin=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Window size for relative conservation scoring [30]<BR>
+    <LI><B><FONT COLOR=RED>iupath=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>The full path to the IUPred exectuable [c:/bioware/iupred/iupred.exe]<BR>
+    <LI><B><FONT COLOR=RED>iucut=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Cut-off for IUPred results (0.0 will report mean IUPred score) [0.0]<BR>
+    <LI><B><FONT COLOR=RED>iumethod=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>IUPred method to use (long/short) [short]<BR>
+    <LI><B><FONT COLOR=RED>percentile=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Percentile steps to return in addition to mean [0]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Alignment Settings ###<BR>
+    <LI><B><FONT COLOR=RED>usealn=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to search for and use alignments where present. [False]<BR>
+    <LI><B><FONT COLOR=RED>alndir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Path to pre-made alignment files [./]<BR>
+    <LI><B><FONT COLOR=RED>alnext=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>File extension of alignment files, AccNum.X (checked before Gopher used) [aln.fas]<BR>
+    <LI><B><FONT COLOR=RED>usegopher=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Use GOPHER to generate missing orthologue alignments in alndir - see gopher_V2.py options [False]<BR>
+    <LI><B><FONT COLOR=RED>gopherdir=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Path from which to call Gopher (and look for PATH/ALN/AccNum.orthaln.fas) [./] <BR>
+    <LI><B><FONT COLOR=RED>fullforce=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to force regeneration of alignments using GOPHER [False]<BR>
+    <LI><B><FONT COLOR=RED>orthdb=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>File to use as source of orthologues for GOPHER []<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Conservation Parameters ###   <BR>
+    <LI><B><FONT COLOR=RED>conspec=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>List of species codes for conservation analysis. Can be name of file containing list. [None]<BR>
+    <LI><B><FONT COLOR=RED>conscore=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Type of conservation score used:  [pos]<BR>
+                        - abs = absolute conservation of motif using RegExp over matched region<BR>
+                        - pos = positional conservation: each position treated independently<BR>
+                        - prob = conservation based on probability from background distribution<BR>
+                        - prop = conservation of amino acid properties<BR>
+                        - rel = relative local conservation (rlc)<BR>
+                        - all = all three methods for comparison purposes<BR>
+    <LI><B><FONT COLOR=RED>consamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to calculate conservation allowing for degeneracy of motif (True) or of fixed variant (False) [True]<BR>
+    <LI><B><FONT COLOR=RED>consinfo=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Weight positions by information content (does nothing for conscore=abs) [True]<BR>
+    <LI><B><FONT COLOR=RED>consweight=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Weight given to global percentage identity for conservation, given more weight to closer sequences [0]<BR>
+                        - 0 gives equal weighting to all. Negative values will upweight distant sequences.<BR>
+    <LI><B><FONT COLOR=RED>minhom=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Minimum number of homologues for making conservation score [1]<BR>
+    <LI><B><FONT COLOR=RED>homfilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to filter homologues using seqfilter options [False]<BR>
+    <LI><B><FONT COLOR=RED>alngap=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to count proteins in alignments that have 100% gaps over motif (True) or (False) ignore<BR>
+                      as putative sequence fragments [False]  (NB. All X regions are ignored as sequence errors.)<BR>
+    <LI><B><FONT COLOR=RED>posmatrix=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Score matrix for amino acid combinations used in pos weighting. (conscore=pos builds from propmatrix) [None]<BR>
+    <LI><B><FONT COLOR=RED>aaprop=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Amino Acid property matrix file. [aaprop.txt]<BR>
+    <LI><B><FONT COLOR=RED>masking=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use seq.info['MaskSeq'] for Prob cons, if present (else 'Sequence') [True]<BR>
+    <LI><B><FONT COLOR=RED>vnematrix=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>BLOSUM matrix file to use for VNE relative conservation []<BR>
+    <LI><B><FONT COLOR=RED>relgappen=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to invoke the "Gap Penalty" during relative conservation calculations [True]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### SLiM/Occ Filtering Options ###<BR>
+    <LI><B><FONT COLOR=RED>slimfilter=</FONT><FONT COLOR=DARKRED>LIST</FONT> : </B>List of stats to filter (remove matching) SLiMs on, consisting of X*Y  []<BR>
+                      - X is an output stat (the column header),<BR>
+                      - * is an operator in the list >, >=, !=, =, >= ,<    <BR>
+                      - Y is a value that X must have, assessed using *.<BR>
+                      This filtering is crude and may behave strangely if X is not a numerical stat!<BR>
+                      !!! Remember to enclose in "quotes" for <> filtering !!!<BR>
+    <LI><B><FONT COLOR=RED>occfilter=</FONT><FONT COLOR=DARKRED>LIST</FONT>  : </B>Same as slimfilter but for individual occurrences []<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_slimcore"><H2>*** Module rje_slimcore *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_slimcore<BR>
+<B>Description:</B>  Core module/object for SLiMFinder and SLiMSearch<BR>
+<B>Version:</B>      1.7<BR>
+<B>Last Edit:</B>    03/06/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is primarily to contain core dataset processing methods for both SLiMFinder and SLiMSearch to inherit and<BR>
+    use. This primarily consists of the options and methods for masking datasets and generating UPC. This module can<BR>
+    therefore be run in standalone mode to generate UPC files for SLiMFinder or SLiMSearch.<BR>
+<BR>
+    In addition, the secondary MotifSeq and Randomise functions are handled here.<BR>
+    <BR>
+<B>Secondary Functions:</B><BR>
+    The "MotifSeq" option will output fasta files for a list of X:Y, where X is a motif pattern and Y is the output file.<BR>
+<BR>
+    The "Randomise" function will take a set of input datasets (as in Batch Mode) and regenerate a set of new datasets<BR>
+    by shuffling the UPC among datasets. Note that, at this stage, this is quite crude and may result in the final<BR>
+    datasets having fewer UPC due to common sequences and/or relationships between UPC clusters in different datasets.<BR>
+<BR>
+<B>Commandline:</B> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Basic Input/Output Options ### <BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Sequence file to search [None]<BR>
+    <LI><B><FONT COLOR=RED>batch=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>List of files to search, wildcards allowed. (Over-ruled by seqin=FILE.) [*.dat,*.fas]<BR>
+    <LI><B><FONT COLOR=RED>maxseq=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum number of sequences to process [500]<BR>
+    <LI><B><FONT COLOR=RED>maxupc=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Maximum UPC size of dataset to process [0]<BR>
+    <LI><B><FONT COLOR=RED>sizesort=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Sorts batch files by size prior to running (+1 small->big; -1 big->small; 0 none) [0]<BR>
+    <LI><B><FONT COLOR=RED>walltime=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Time in hours before program will abort search and exit [1.0]<BR>
+    <LI><B><FONT COLOR=RED>resdir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Redirect individual output files to specified directory (and look for intermediates) [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>buildpath=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Alternative path to look for existing intermediate files [SLiMFinder/]<BR>
+    <LI><B><FONT COLOR=RED>force=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Force re-running of BLAST, UPC generation and SLiMBuild [False]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether the sequences files are DNA rather than protein [False]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Evolutionary Filtering Options ###<BR>
+    <LI><B><FONT COLOR=RED>efilter=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to use evolutionary filter [True]<BR>
+    <LI><B><FONT COLOR=RED>blastf=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use BLAST Complexity filter when determining relationships [True]<BR>
+    <LI><B><FONT COLOR=RED>blaste=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>BLAST e-value threshold for determining relationships [1e=4]<BR>
+    <LI><B><FONT COLOR=RED>altdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Alternative all by all distance matrix for relationships [None]<BR>
+    <LI><B><FONT COLOR=RED>gablamdis=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Alternative GABLAM results file [None] (!!!Experimental feature!!!)<BR>
+    <LI><B><FONT COLOR=RED>domtable=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>Domain table containing domain ("Type") and sequence ("Name") pairings for additional UPC [None]<BR>
+    <LI><B><FONT COLOR=RED>homcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Max number of homologues to allow (to reduce large multi-domain families) [0]<BR>
+    <LI><B><FONT COLOR=RED>extras=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to generate additional output files (distance matrices etc.) [True]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Input Masking and AA Frequency Options ###<BR>
+    <LI><B><FONT COLOR=RED>masking=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Master control switch to turn off all masking if False [True]<BR>
+    <LI><B><FONT COLOR=RED>dismask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to mask ordered regions (see rje_disorder for options) [False]<BR>
+    <LI><B><FONT COLOR=RED>consmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use relative conservation masking [False]<BR>
+    <LI><B><FONT COLOR=RED>ftmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>UniProt features to mask out [EM,DOMAIN,TRANSMEM]<BR>
+    <LI><B><FONT COLOR=RED>imask=</FONT><FONT COLOR=DARKRED>LIST</FONT>      : </B>UniProt features to inversely ("inclusively") mask. (Seqs MUST have 1+ features) []<BR>
+    <LI><B><FONT COLOR=RED>fakemask=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to invoke UniFake to generate additional features for masking [False]<BR>
+    <LI><B><FONT COLOR=RED>compmask=</FONT><FONT COLOR=DARKRED>X,Y</FONT>    : </B>Mask low complexity regions (same AA in X+ of Y consecutive aas) [5,8]<BR>
+    <LI><B><FONT COLOR=RED>casemask=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Mask Upper or Lower case [None]<BR>
+    <LI><B><FONT COLOR=RED>metmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Masks the N-terminal M (can be useful if SLiMFinder termini=T) *Also maskm=T/F* [True]<BR>
+    <LI><B><FONT COLOR=RED>posmask=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Masks list of position-specific aas, where list = pos1:aas,pos2:aas *Also maskpos=LIST* [2:A]<BR>
+    <LI><B><FONT COLOR=RED>aamask=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>Masks list of AAs from all sequences (reduces alphabet) []<BR>
+    <LI><B><FONT COLOR=RED>motifmask=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>List (or file) of motifs to mask from input sequences []<BR>
+    <LI><B><FONT COLOR=RED>logmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to output the log messages for masking of individual sequences to screen [False]<BR>
+    <LI><B><FONT COLOR=RED>masktext=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Text ID to over-ride automated masking text and identify specific masking settings [None]<BR>
+    <LI><B><FONT COLOR=RED>maskpickle=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Whether to save/load pickle of masked input data, independent of main pickling [False]<BR>
+    <LI><B><FONT COLOR=RED>maskfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to use masked AA Frequencies (True), or (False) mask after frequency calculations [True]<BR>
+    <LI><B><FONT COLOR=RED>aafreq=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Use FILE to replace individual sequence AAFreqs (FILE can be sequences or aafreq) [None]    <BR>
+    <LI><B><FONT COLOR=RED>smearfreq=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to "smear" AA frequencies across UPC rather than keep separate AAFreqs [False]<BR>
+    <LI><B><FONT COLOR=RED>qregion=</FONT><FONT COLOR=DARKRED>X,Y</FONT>     : </B>Mask all but the region of the query from (and including) residue X to residue Y [0,-1]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Advanced Output Options ###<BR>
+    <LI><B><FONT COLOR=RED>targz=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Whether to tar and zip dataset result files (UNIX only) [False]<BR>
+    <LI><B><FONT COLOR=RED>pickle=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to save/use pickles [True]<BR>
+    <LI><B><FONT COLOR=RED>savespace=</FONT><FONT COLOR=DARKRED>0</FONT>     : </B>Delete "unneccessary" files following run (best used with targz): [0]<BR>
+                        - 0 = Delete no files<BR>
+                        - 1 = Delete all bar *.upc, *.pickle and *.occ.csv files (Pickle excluded from tar.gz with this setting)<BR>
+                        - 2 = Delete all bar *.upc, *.pickle files (Pickle excluded from tar.gz with this setting)<BR>
+                        - 3 = Delete all dataset-specific files including *.upc and *.pickle (not *.tar.gz)<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Additional Functions I: MotifSeq ###    <BR>
+    <LI><B><FONT COLOR=RED>motifseq=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>Outputs fasta files for a list of X:Y, where X is the pattern and Y is the output file []<BR>
+    <LI><B><FONT COLOR=RED>slimbuild=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to build motifs with SLiMBuild. (For combination with motifseq only.) [True]<BR>
+<BR>
+    ### Additional Functions II: Randomised datasets ###<BR>
+    <LI><B><FONT COLOR=RED>randomise=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Randomise UPC within batch files and output new datasets [False]<BR>
+    <LI><B><FONT COLOR=RED>randir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Output path for creation of randomised datasets [Random/]<BR>
+    <LI><B><FONT COLOR=RED>randbase=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Base for random dataset name [rand]<BR>
+    <LI><B><FONT COLOR=RED>randsource=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>Source for new sequences for random datasets (replaces UPCs) [None]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, math, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_blast, rje_dismatrix_V2, rje_seq, rje_scoring, rje_slim, rje_slimlist<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_slimlist"><H2>*** Module rje_slimlist *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_slimlist<BR>
+<B>Description:</B>  SLiM dataset manager<BR>
+<B>Version:</B>      0.5<BR>
+<B>Last Edit:</B>    16/11/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is a replace for the rje_motiflist module and contains the SLiMList class, a replacement for the<BR>
+    MotifList class. The primary function of this class is to load and store a list of SLiMs and control generic SLiM<BR>
+    outputs for such programs as SLiMSearch. This class also controls motif filtering according to features of the motifs<BR>
+    and/or their occurrences.<BR>
+<BR>
+<B>Commandline:</B> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Basic Input/Output Options ###<BR>
+    <LI><B><FONT COLOR=RED>motifs=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>File of input motifs/peptides [None]<BR>
+                      Single line per motif format = 'Name Sequence #Comments' (Comments are optional and ignored)<BR>
+                      Alternative formats include fasta, SLiMDisc output and raw motif lists.<BR>
+    <LI><B><FONT COLOR=RED>reverse=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Reverse the motifs - good for generating a test comparison data set [False]<BR>
+    <LI><B><FONT COLOR=RED>wildscram=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Perform a wildcard spacer scrambling - good for generating a test comparison data set [False]<BR>
+    <LI><B><FONT COLOR=RED>motifout=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>Name of output file for reformatted/filtered SLiMs (PRESTO format) [None]<BR>
+    <LI><B><FONT COLOR=RED>ftout=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Make a file of UniProt features for extracted parent proteins, where possible, incoroprating SLIMs [*.features.tdt]<BR>
+    <LI><B><FONT COLOR=RED>mismatch=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>List of X:Y pairs for mismatch dictionary, where X mismatches allowed for Y+ defined positions []    <BR>
+    <LI><B><FONT COLOR=RED>motinfo=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Filename for output of motif summary table (if desired) [None]<BR>
+    <LI><B><FONT COLOR=RED>dna=</FONT><FONT COLOR=DARKRED>T/F</FONT>         : </B>Whether motifs should be considered as DNA motifs [False]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Advanced Input I: Motif Filtering Options ###<BR>
+    <LI><B><FONT COLOR=RED>minpos=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min number of defined positions [0]<BR>
+    <LI><B><FONT COLOR=RED>minfix=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Min number of fixed positions for a motif to contain [0]<BR>
+    <LI><B><FONT COLOR=RED>minic=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Min information content for a motif (1 fixed position = 1.0) [0.0]<BR>
+    <LI><B><FONT COLOR=RED>goodmotif=</FONT><FONT COLOR=DARKRED>LIST</FONT>  : </B>List of text to match in Motif names to keep (can have wildcards) []<BR>
+    <LI><B><FONT COLOR=RED>nrmotif=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to remove redundancy in input motifs [False]<BR>
+<BR>
+    ### Advanced Input II: Motif reformatting options ###<BR>
+    <LI><B><FONT COLOR=RED>trimx=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Trims Xs from the ends of a motif [False]<BR>
+    <LI><B><FONT COLOR=RED>minimotif=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Input file is in minimotif format and will be reformatted (PRESTO File format only) [False]<BR>
+    <LI><B><FONT COLOR=RED>ambcut=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Cut-off for max number of choices in ambiguous position to be shown as variant [10]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+    ### Advanced Output I: Motif Occurrence Statistics Options ###<BR>
+    <LI><B><FONT COLOR=RED>slimcalc=</FONT><FONT COLOR=DARKRED>LIST</FONT>   : </B>List of additional statistics to calculate for occurrences - Cons,SA,Hyd,Fold,IUP,Chg []<BR>
+    <LI><B><FONT COLOR=RED>winsize=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Used to define flanking regions for stats. If negative, will use flanks *only* [0]<BR>
+    <LI><B><FONT COLOR=RED>iupath=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>The full path to the IUPred exectuable [c:/bioware/iupred/iupred.exe]<BR>
+    <LI><B><FONT COLOR=RED>iucut=</FONT><FONT COLOR=DARKRED>X</FONT>         : </B>Cut-off for IUPred results (0.0 will report mean IUPred score) [0.0]<BR>
+    <LI><B><FONT COLOR=RED>iumethod=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>IUPred method to use (long/short) [short]<BR>
+    <LI><B><FONT COLOR=RED>percentile=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Percentile steps to return in addition to mean [0]<BR>
+    <LI><B><FONT COLOR=RED>peptides=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to output peptide sequences based on motif and winsize [False]<BR>
+<BR>
+    ### Advanced Output II: Alignment Settings ###<BR>
+    <LI><B><FONT COLOR=RED>usealn=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to search for and use alignemnts where present. [False]<BR>
+    <LI><B><FONT COLOR=RED>gopher=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Use GOPHER to generate missing orthologue alignments in alndir - see gopher.py options [False]<BR>
+    <LI><B><FONT COLOR=RED>alndir=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Path to alignments of proteins containing motifs [./] * Use forward slashes (/)<BR>
+    <LI><B><FONT COLOR=RED>alnext=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>File extension of alignment files, accnum.X [aln.fas]<BR>
+    <LI><B><FONT COLOR=RED>protalndir=</FONT><FONT COLOR=DARKRED>PATH</FONT> : </B>Output path for Protein Alignments [ProteinAln/]<BR>
+    <LI><B><FONT COLOR=RED>motalndir=</FONT><FONT COLOR=DARKRED>PATH</FONT>  : </B>Output path for Motif Alignments []<BR>
+    <LI><B><FONT COLOR=RED>flanksize=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Size of sequence flanks for motifs [30]<BR>
+    <LI><B><FONT COLOR=RED>xdivide=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>Size of dividing Xs between motifs [10]<BR>
+    <LI><B><FONT COLOR=RED>fullforce=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to force regeneration of alignments using GOPHER<BR>
+<BR>
+    ### Advanced Output III: Conservation Parameters ###   <BR>
+    <LI><B><FONT COLOR=RED>conspec=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>List of species codes for conservation analysis. Can be name of file containing list. [None]<BR>
+    <LI><B><FONT COLOR=RED>conscore=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Type of conservation score used:  [pos]<BR>
+                        - abs = absolute conservation of motif using RegExp over matched region<BR>
+                        - pos = positional conservation: each position treated independently <BR>
+                        - prop = conservation of amino acid properties<BR>
+                        - all = all three methods for comparison purposes<BR>
+    <LI><B><FONT COLOR=RED>consamb=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to calculate conservation allowing for degeneracy of motif (True) or of fixed variant (False) [True]<BR>
+    <LI><B><FONT COLOR=RED>consinfo=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Weight positions by information content (does nothing for conscore=abs) [True]<BR>
+    <LI><B><FONT COLOR=RED>consweight=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Weight given to global percentage identity for conservation, given more weight to closer sequences [0]<BR>
+                        - 0 gives equal weighting to all. Negative values will upweight distant sequences.<BR>
+    <LI><B><FONT COLOR=RED>alngap=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to count proteins in alignments that have 100% gaps over motif (True) or (False) ignore<BR>
+                      as putative sequence fragments [False]  (NB. All X regions are ignored as sequence errors.)<BR>
+    <LI><B><FONT COLOR=RED>posmatrix=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>Score matrix for amino acid combinations used in pos weighting. (conscore=pos builds from propmatrix) [None]<BR>
+    <LI><B><FONT COLOR=RED>aaprop=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Amino Acid property matrix file. [aaprop.txt]<BR>
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_tm"><H2>*** Module rje_tm *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_tm    <BR>
+<B>Description:</B>  Tranmembrane and Signal Peptide Prediction Module<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    16/08/07<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Will read in results from tmhmm and/or signalp files as appropriate and append output to:<BR>
+    - tm.tdt        = TM domain counts and orientation<BR>
+    - domains.tdt   = Domain table<BR>
+    - singalp.tdt   = SingalP data (use to add signal peptide domains to domains table using mySQL<BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>tmhmm=</FONT><FONT COLOR=DARKRED>FILE</FONT>  : </B>TMHMM output file [None]<BR>
+    <LI><B><FONT COLOR=RED>signalp=</FONT><FONT COLOR=DARKRED>FILE</FONT>: </B>SignalP output file [None]<BR>
+    <LI><B><FONT COLOR=RED>mysql=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Output results in tdt files for mySQL import [True]<BR>
+<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Sequence file for which predictions have been made [None]<BR>
+    <LI><B><FONT COLOR=RED>maskcleave=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Whether to output sequences with cleaved signal peptides masked. [False]<BR>
+    <LI><B><FONT COLOR=RED>source=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Source text for mySQL file ['tmhmm']<BR>
+<BR>
+<B>Uses general modules:</B> os, string, sys, threading, time<BR>
+<B>Uses RJE modules:</B> rje, rje_seq<BR>
+<B>Other modules required:</B> rje_blast, rje_dismatrix, rje_pam, rje_sequence, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_tree"><H2>*** Module rje_tree *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_tree<BR>
+<B>Description:</B>  Phylogenetic Tree Module<BR>
+<B>Version:</B>      2.7<BR>
+<B>Last Edit:</B>    15/11/10<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Reads in, edits and outputs phylogenetic trees. Executes duplication and subfamily determination. More details available<BR>
+    in documentation for HAQESAC, GASP and BADASP at http://www.bioinformatics.rcsi.ie/~redwards/<BR>
+<BR>
+<B>General Commands:</B><BR>
+    <LI><B><FONT COLOR=RED>nsfin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>load NSF tree from FILE<BR>
+    <LI><B><FONT COLOR=RED>phbin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>load ClustalW Format *.phb NSF tree from FILE<BR>
+    <LI><B><FONT COLOR=RED>seqin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>load sequence list from FILE (not compatible with useanc)<BR>
+    <LI><B><FONT COLOR=RED>disin=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>load distance matrix from FILE (Phylip format for use with distance matrix methods) [None]<BR>
+    <LI><B><FONT COLOR=RED>useanc=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>load sequences from ancestral sequence FILE (not compatible with seqin)<BR>
+    <LI><B><FONT COLOR=RED>deflen=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Default length for branches when no lengths given [0.1] (or 0.1 x longest branch)<BR>
+    *Note that in the case of conflicts (e.g. seqin=FILE1 useanc=FILE2), the latter will be used.*<BR>
+    <LI><B><FONT COLOR=RED>autoload=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether to automatically load sequences upon initiating object [True]<BR>
+<BR>
+<B>Rooting Commands:</B><BR>
+    <LI><B><FONT COLOR=RED>root=</FONT><FONT COLOR=DARKRED>X</FONT>  : </B>Rooting of tree (rje_tree.py):<BR>
+        - mid = midpoint root tree.<BR>
+        - ran = random branch.<BR>
+        - ranwt = random branch, weighted by branch lengths.<BR>
+        - man = always ask for rooting options (unless i<0).<BR>
+        - FILE = with seqs in FILE as outgroup. (Any option other than above)<BR>
+    <LI><B><FONT COLOR=RED>rootbuffer=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Min. distance from node for root placement (percentage of branch length)[0.1]<BR>
+<BR>
+<B>Grouping/Subfamily Commands:</B><BR>
+    <LI><B><FONT COLOR=RED>bootcut=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>cut-off percentage of tree bootstraps for grouping.<BR>
+    <LI><B><FONT COLOR=RED>mfs=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>minimum family size [3]<BR>
+    <LI><B><FONT COLOR=RED>fam=</FONT><FONT COLOR=DARKRED>X</FONT>       : </B>minimum number of families (If 0, no subfam grouping) [0]<BR>
+    <LI><B><FONT COLOR=RED>orphan=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Whether orphans sequences (not in subfam) allowed. [True]<BR>
+    <LI><B><FONT COLOR=RED>allowvar=</FONT><FONT COLOR=DARKRED>T/F</FONT>: </B>Allow variants of same species within a group. [False]<BR>
+    <LI><B><FONT COLOR=RED>qryvar=</FONT><FONT COLOR=DARKRED>T/F</FONT>  : </B>Allow variants of query species within a group (over-rides allowvar=F). [False]<BR>
+    <LI><B><FONT COLOR=RED>groupspec=</FONT><FONT COLOR=DARKRED>X</FONT> : </B>Species for duplication grouping [None]<BR>
+    <LI><B><FONT COLOR=RED>specdup=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>Minimum number of different species in clade to be identified as a duplication [1]<BR>
+    <LI><B><FONT COLOR=RED>group=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Grouping of tree<BR>
+        - man = manual grouping (unless i<0).<BR>
+        - dup = duplication (all species unless groupspec specified).<BR>
+        - qry = duplication with species of Query sequence (or Sequence 1) of treeseq<BR>
+        - one = all sequences in one group<BR>
+        - None = no group (case sensitive)<BR>
+        - FILE = load groups from file<BR>
+<BR>
+<B>Tree Making Commands:</B><BR>
+    <LI><B><FONT COLOR=RED>cwtree=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Make a ClustalW NJ Tree from FILE (will save *.ph or *.phb) [None]<BR>
+    <LI><B><FONT COLOR=RED>kimura=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Whether to use Kimura correction for multiple hits [True]<BR>
+    <LI><B><FONT COLOR=RED>bootstraps=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Number of bootstraps [0]<BR>
+    <LI><B><FONT COLOR=RED>clustalw=</FONT><FONT COLOR=DARKRED>CMD</FONT>    : </B>Path to CLUSTALW (and including) program ['c:/bioware/clustalw.exe'] * Use forward slashes (/)<BR>
+    <LI><B><FONT COLOR=RED>fasttree=</FONT><FONT COLOR=DARKRED>PATH</FONT>   : </B>Path to FastTree (and including) program [./FastTree]<BR>
+    <LI><B><FONT COLOR=RED>phylip=</FONT><FONT COLOR=DARKRED>PATH</FONT>     : </B>Path to PHYLIP programs ['c:/bioware/phylip3.65/exe/'] * Use forward slashes (/)<BR>
+    <LI><B><FONT COLOR=RED>phyoptions=</FONT><FONT COLOR=DARKRED>FILE</FONT> : </B>File containing extra Phylip tree-making options ('batch running') to use [None]<BR>
+    <LI><B><FONT COLOR=RED>protdist=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>File containing extra Phylip PROTDIST options ('batch running') to use [None]<BR>
+    <LI><B><FONT COLOR=RED>maketree=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Program for making tree [None]<BR>
+        - None = Do not make tree from sequences <BR>
+        - clustalw = ClustalW NJ method<BR>
+        - neighbor = PHYLIP NJ method <BR>
+        - upgma    = PHYLIP UPGMA (neighbor) method <BR>
+        - fitch    = PHYLIP Fitch method <BR>
+        - kitsch   = PHYLIP Kitsch (clock) method <BR>
+        - protpars = PHYLIP MP method <BR>
+        - proml    = PHYLIP ML method<BR>
+        - fasttree = Use FastTree<BR>
+        - PATH     = Alternatively, a path to a different tree program/script can be given. This should accept ClustalW parameters.<BR>
+<BR>
+<B>Tree Display/Saving Commands</B><BR>
+    <LI><B><FONT COLOR=RED>savetree=</FONT><FONT COLOR=DARKRED>FILE</FONT>   : </B>Save a generated tree as FILE [seqin.maketree.nsf]<BR>
+    <LI><B><FONT COLOR=RED>savetype=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>Format for generated tree file (nsf/text/r/png/bud/cairo/te) [nsf]<BR>
+    <LI><B><FONT COLOR=RED>treeformats=</FONT><FONT COLOR=DARKRED>LIST</FONT>: </B>List of output formats for generated trees [nsf]<BR>
+    <LI><B><FONT COLOR=RED>outnames=</FONT><FONT COLOR=DARKRED>X</FONT>      : </B>'short'/'long' names in output file [short]<BR>
+    <LI><B><FONT COLOR=RED>truncnames=</FONT><FONT COLOR=DARKRED>X</FONT>    : </B>Truncate names to X characters (0 for no truncation) [123]<BR>
+    <LI><B><FONT COLOR=RED>branchlen=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to use branch lengths in output tree [True]<BR>
+    <LI><B><FONT COLOR=RED>deflen=</FONT><FONT COLOR=DARKRED>X</FONT>        : </B>Default branch length (when none given, also for tree scaling) [0.1]<BR>
+    <LI><B><FONT COLOR=RED>textscale=</FONT><FONT COLOR=DARKRED>X</FONT>     : </B>Default scale for text trees (no. of characters per deflen distance) [4]<BR>
+    <LI><B><FONT COLOR=RED>seqnum=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Output sequence numbers (if making tree from sequences) [True]<BR>
+    <BR>
+<B>Classes:</B><BR>
+    Tree(rje.RJE_Object):     <BR>
+        - Phylogenetic Tree class.<BR>
+    Node(rje.RJE_Object): <BR>
+        - Individual nodes (internal and leaves) for Tree object.<BR>
+    Branch(rje.RJE_Object):<BR>
+        - Individual branches for Tree object.<BR>
+        <BR>
+<B>Uses general modules:</B> copy, os, random, re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_ancseq, rje_seq, rje_tree_group<BR>
+<B>Other module needed:</B> rje_blast, rje_dismatrix, rje_pam, rje_sequence, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_tree_group"><H2>*** Module rje_tree_group *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_tree_group<BR>
+<B>Description:</B>  Contains all the Grouping Methods for rje_tree.py<BR>
+<B>Version:</B>      1.2<BR>
+<B>Last Edit:</B>    19/08/09<BR>
+<B>Copyright (C) 2005  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is a stripped down template for methods only. This is for when a class has too many methods and becomes<BR>
+    untidy. In this case, methods can be moved into a methods module and 'self' replaced with the relevant object. For<BR>
+    this module, 'self' becomes '_tree'.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    This module is not for standalone running and has no commandline options (including 'help'). All options are handled<BR>
+    by the parent module: rje_tree.py<BR>
+<BR>
+<B>Uses general modules:</B> copy, re, os, string, sys<BR>
+<B>Uses RJE modules:</B> rje, rje_seq<BR>
+<B>Other modules needed:</B> rje_blast, rje_dismatrix, rje_pam, rje_sequence, rje_uniprot<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_uniprot"><H2>*** Module rje_uniprot *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_uniprot<BR>
+<B>Description:</B>  RJE Module to Handle Uniprot Files<BR>
+<B>Version:</B>      3.8<BR>
+<B>Last Edit:</B>    15/11/10<BR>
+<B>Copyright (C) 2007 Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module contains methods for handling UniProt files, primarily in other rje modules but also with some<BR>
+    standalone functionality. To get the most out of the module with big UniProt files (such as the downloads from EBI),<BR>
+    first index the UniProt data using the rje_dbase module.<BR>
+<BR>
+    This module can be used to extract a list of UniProt entries from a larger database and/or to produce summary tables<BR>
+    from UniProt flat files.<BR>
+<BR>
+    In addition to method associated with the classes of this module, there are a number of methods that are called from<BR>
+    the rje_dbase module (primarily) to download and process the UniProt sequence database.<BR>
+<BR>
+<B>Input Options:</B><BR>
+    <LI><B><FONT COLOR=RED>unipath=</FONT><FONT COLOR=DARKRED>PATH</FONT>    : </B>Path to UniProt Datafile (will look here for DB Index file made with rje_dbase)<BR>
+    <LI><B><FONT COLOR=RED>dbindex=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Database index file [uniprot.index]<BR>
+    <LI><B><FONT COLOR=RED>uniprot=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Name of UniProt file [None]<BR>
+    <LI><B><FONT COLOR=RED>extract=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Extract IDs/AccNums in list. LIST can be FILE or list of IDs/AccNums X,Y,.. []<BR>
+    <LI><B><FONT COLOR=RED>acclist=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>As Extract.<BR>
+    <LI><B><FONT COLOR=RED>specdat=</FONT><FONT COLOR=DARKRED>LIST</FONT>    : </B>Make a UniProt DAT file of the listed species from the index (over-rules extract=LIST) []<BR>
+    <LI><B><FONT COLOR=RED>splicevar=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to search for AccNum allowing for splice variants (AccNum-X) [True]<BR>
+    <LI><B><FONT COLOR=RED>tmconvert=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to convert TOPO_DOM features, using first description word as Type [False]<BR>
+<BR>
+<B>Output Options:</B><BR>
+    <LI><B><FONT COLOR=RED>makeindex=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Generate UniProt index files [False]<BR>
+    <LI><B><FONT COLOR=RED>makespec=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Generate species table [False]<BR>
+    <LI><B><FONT COLOR=RED>makefas=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Generate fasta files [False]<BR>
+    <LI><B><FONT COLOR=RED>datout=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Name of new (reduced) UniProt DAT file of extracted sequences [None]<BR>
+    <LI><B><FONT COLOR=RED>tabout=</FONT><FONT COLOR=DARKRED>FILE</FONT>     : </B>Table of extracted UniProt details [None]<BR>
+    <LI><B><FONT COLOR=RED>linkout=</FONT><FONT COLOR=DARKRED>FILE</FONT>    : </B>Table of extracted Database links [None]<BR>
+    <LI><B><FONT COLOR=RED>longlink=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Whether link table is to be "long" (acc,db,dbacc) or "wide" (acc, dblinks) [True]<BR>
+    <LI><B><FONT COLOR=RED>ftout=</FONT><FONT COLOR=DARKRED>FILE</FONT>      : </B>Outputs table of features into FILE [None]<BR>
+    <LI><B><FONT COLOR=RED>domtable=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Makes a table of domains from uniprot file [False]<BR>
+    <LI><B><FONT COLOR=RED>cc2ft=</FONT><FONT COLOR=DARKRED>T/F</FONT>       : </B>Extra whole-length features added for TISSUE and LOCATION (not in datout) [False]<BR>
+<BR>
+<B>UniProt Conversion Options:</B><BR>
+    <LI><B><FONT COLOR=RED>ucft=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>Feature to add for UpperCase portions of sequence []<BR>
+    <LI><B><FONT COLOR=RED>lcft=</FONT><FONT COLOR=DARKRED>X</FONT>          : </B>Feature to add for LowerCase portions of sequence []<BR>
+    <LI><B><FONT COLOR=RED>maskft=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of Features to mask out []<BR>
+    <LI><B><FONT COLOR=RED>invmask=</FONT><FONT COLOR=DARKRED>T/F</FONT>     : </B>Whether to invert the masking and only retain maskft features [False]<BR>
+    <LI><B><FONT COLOR=RED>caseft=</FONT><FONT COLOR=DARKRED>LIST</FONT>     : </B>List of Features to make upper case with rest of sequence lower case []<BR>
+<BR>
+<B>General Options:</B><BR>
+    <LI><B><FONT COLOR=RED>append=</FONT><FONT COLOR=DARKRED>T/F</FONT>      : </B>Append to results files rather than overwrite [False]<BR>
+    <LI><B><FONT COLOR=RED>memsaver=</FONT><FONT COLOR=DARKRED>T/F</FONT>    : </B>Memsaver option to save memory usage - does not retain entries in UniProt object [False]<BR>
+    <LI><B><FONT COLOR=RED>cleardata=</FONT><FONT COLOR=DARKRED>T/F</FONT>   : </B>Whether to clear unprocessed Entry data (True) or (False) retain in Entry & Sequence objects [True]<BR>
+<BR>
+<B>Uses general modules:</B> glob, os, re, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje, rje_sequence<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_xgmml"><H2>*** Module rje_xgmml *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       RJE_XGMML<BR>
+<B>Description:</B>  RJE XGMLL Module <BR>
+<B>Version:</B>      0.0<BR>
+<B>Last Edit:</B>    14/11/07<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    This module is currently designed to store data for, and then output, an XGMML file for uploading into Cytoscape etc.<BR>
+    Future versions may incoporate the ability to read and manipulate existing XGMML files.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    At present, all commands are handling by the class populating the XGMML object.<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+<A NAME="rje_zen"><H2>*** Module rje_zen *** [<A HREF="#Top">Top</A>]</H2><P>
+
+<B>Module:</B>       rje_zen<BR>
+<B>Description:</B>  Random Zen Wisdom Generator<BR>
+<B>Version:</B>      1.0<BR>
+<B>Last Edit:</B>    15/04/08<BR>
+<B>Copyright (C) 2007  Richard J. Edwards - See source code for GNU License Notice</B><BR>
+<BR>
+<B>Function:</B><BR>
+    Generates random (probably nonsensical) Zen wisdoms. Just for fun.<BR>
+<BR>
+<B>Commandline:</B><BR>
+    <LI><B><FONT COLOR=RED>wisdoms=</FONT><FONT COLOR=DARKRED>X</FONT>   : </B>Number of Zen Wisdoms to return [10]<BR>
+<BR>
+<B>Uses general modules:</B> copy, glob, os, string, sys, time<BR>
+<B>Uses RJE modules:</B> rje<BR>
+<B>Other modules needed:</B> None<BR>
+<BR>
+</P><HR>
+
+
+
+
+</BODY>
+</HTML>
