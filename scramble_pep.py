@@ -69,12 +69,19 @@ import optparse
 
 #Non-built in modules
 import peptide_occurance
-#try:
-from suds.client import Client
-from PepLibGen.StructGen import synthrules
-#except ImportError, e:
-#    sys.stderr.write("Could not find required module. ")
-#    sys.stderr.write(e.message)
+try:
+	from suds.client import Client
+except ImportError, e:
+    sys.stderr.write("WARNING: Could not find required module.\n")
+    sys.stderr.write(e.message)
+    sys.stderr.write("\n")
+
+try:
+	from PepLibGen.StructGen import synthrules
+except ImportError, e:
+    sys.stderr.write("WARNING: Could not find required module.\n")
+    sys.stderr.write(e.message)
+    sys.stderr.write("\n\n")
 
     
 #Rich Edwards slimfinder modules
